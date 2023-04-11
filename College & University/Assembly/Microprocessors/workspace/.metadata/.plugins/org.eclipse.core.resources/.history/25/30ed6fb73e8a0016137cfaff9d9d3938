@@ -1,0 +1,22 @@
+.equ RED_LEDS,		0x10000010	# RED LEDS
+.equ PUSH_BUTTONS,	0x10000020	# PUSH BUTTONS
+
+.data
+.align 2
+
+.text
+.global main
+
+main:
+
+
+
+loop:
+
+
+
+
+
+br 		loop
+
+.end

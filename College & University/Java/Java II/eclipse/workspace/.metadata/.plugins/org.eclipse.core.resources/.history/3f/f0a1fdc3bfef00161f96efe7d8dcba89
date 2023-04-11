@@ -1,0 +1,58 @@
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.TextField;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import javax.swing.SpringLayout.Constraints;
+
+public class ExceptionDemo {
+
+	public static void main(String[] args) {
+		try {
+//			System.out.println("Enter the number of donuts: ");
+//			Scanner s = new Scanner(System.in);
+//			int donutCount = s.nextInt();
+//			
+//			System.out.println("Enter the number of glasses of milk:");
+//			int milkCnt = s.nextInt();
+//			
+//			if(milkCnt <= 0) {
+//				throw new Exception("Hey you have no milk!!!");
+//			}
+//			
+//			double donutsPerGlass = donutCount / milkCnt;
+//			System.out.println(donutCount+ " donuts");
+//			System.out.println(milkCnt + " glasses of milk");
+//			System.out.println("You have " + donutsPerGlass + " donuts for each glash of milk.");
+			
+			Frame frame = new Frame();
+			TextField text = new TextField();
+			
+			Label milk = new Label("milk", Label.LEFT);
+			Panel panel = new Panel();        // Panel is a Container
+			Button btn = new Button("Press"); // Button is a Component
+			
+			panel.add(btn);                   // The Panel Container adds a Button Component
+			
+			panel.setVisible(true);
+			frame.setVisible(true);
+			milk.setVisible(true);
+			frame.setSize(400, 400);
+			frame.add(milk, 0);
+		}
+		catch(InputMismatchException e) {
+			System.out.print("You cannot type that in. (" + e.toString() + ")");
+		}
+		catch(ArithmeticException e) {
+			System.out.print("Buy more milk!");
+		}
+		catch(Exception e) {
+			System.out.println("Unexpected Exception: " + e.toString());
+			System.exit(0);
+		}
+	}
+
+}

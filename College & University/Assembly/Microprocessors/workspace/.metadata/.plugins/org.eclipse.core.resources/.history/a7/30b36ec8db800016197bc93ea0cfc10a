@@ -1,0 +1,51 @@
+		.equ SWITCHES, 0x10000030	# The base address of the slider switches
+
+		.equ PWM0_Clock_Divider, 0x10000300
+		.equ PWM0_Duty_Cycle, 0x10000304
+		.equ PWM0_Enable, 0x10000308
+
+		.equ PWM0_Clock_Divider, 0x10000310
+		.equ PWM0_Duty_Cycle, 0x10000314
+		.equ PWM0_Enable, 0x10000318
+
+						# Be sure to add an .equ statement for the PWM0 base addresses
+
+
+		.text 			# The text region indicates the start of instructions
+
+		.global main
+
+main:	nop
+						# BEGIN YOUR SETUP CODE HERE
+						# Setup the PWM module and enable it. Remember
+						# to either load your addresses as you go,
+						# or you can set aside registers for memory
+						# addresses all at once, and leave them.
+
+	# Setup Registers
+	movia r2, SWITCHES
+	movia r3, PWM0_Clock_Divider
+	movia r4, PWM0_Duty_Cycle
+	movia r5, PWM0_Enable
+
+	# Store value 2499 into clock divider
+	movi r6, 2499   # IMM16 --> r6
+	ldw	r20, 0(r6)	# r20(VARIABLE) <-- value --- r6(CONSTANT 2499)
+	stw r20, 0(r3)	# r20(VARIABLE) --- value --> r3(PWM0_clock_divider
+
+loop:	nop
+							# THE MAIN LOOP STARTS HERE
+							# Read switches, multiply the value by 4, then
+							# store in PWM0's duty_cycle register
+
+	# Read switches and multiply by 4, then store in PWM0's duty cycle register
+	ldw r20, 0(r2)		# r20(VARIABLE) --- value --> r2(SWITCHES)
+	muli r8, r20, 4		# r20 x 4
+	stw r8, 0(r4)		# r8(RESULT) 	--- value --> r4(DUTY_CYCLE)
+
+
+		br	loop			# END OF LOOP
+
+		.end
+
+

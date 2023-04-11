@@ -1,0 +1,14 @@
+
+public class StudentGradeDemo {
+	
+	// Start Demo.
+	public static void main(String[] args) {
+		
+		// Create instance.
+		StudentGrade grade = new StudentGrade();
+		
+		// Start Grading.
+		grade.startGrading();
+	}
+
+}

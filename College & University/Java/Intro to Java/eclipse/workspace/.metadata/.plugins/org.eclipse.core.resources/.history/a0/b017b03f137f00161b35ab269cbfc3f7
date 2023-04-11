@@ -1,0 +1,223 @@
+package chapter2;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class BMR {
+
+	private static Scanner kb;		//text scanner variable
+	static double BMRf = 0.00;					// in calories
+	static double BMRm = 0.00;					// in calories
+	static double BMR = 0.00;					// in calories
+	//static String name = null;				
+	//static String gender = null;				
+	static double weight = 0.00;				// in pounds, lbs
+	static double height = 0.00;				// in inches
+	static int age = 0;							// in years
+	static double chocolateBarCalories = 230;	
+	static double chocolateBars = 0.00;	
+	
+	
+	public static void main(String[] args) {
+
+		//Console();
+		JOptionPane();
+		
+	}
+
+	public static void Console()
+	{
+	// Lets the user know what program is running.
+		System.out.println("[ Basal Metabolic Rate (BMR) Measurement Test ]");
+		System.out.print("-----------------------------------------------------");		// Print Lines.
+		System.out.println("-----------------------------------------------------");
+		
+		System.out.println("Hi and welcome.");
+		System.out.print("-----------------------------------------------------");		// Print Lines.
+		System.out.println("-----------------------------------------------------");
+		System.out.println("This program will calculate your basal metabolic rate, or BMR. "
+				+ "\nBMR is the number of calories your body needs to maintain your weight if you do no exercise.");
+		
+		System.out.print("-----------------------------------------------------");		// Print Lines.
+		System.out.println("-----------------------------------------------------");
+		
+		// Defines "kb" as text scanner input.
+		kb = new Scanner(System.in);
+		
+	// Prompts user to enter information.
+		
+/*
+		// Enter NAME.
+		System.out.println("Please enter your name.");
+		while (!kb.hasNextLine()) kb.next();
+		name = kb.nextLine();
+*/
+		
+/*
+		// Enter GENDER.
+		System.out.println("Are you male or female? Type M or F.");
+		gender = kb.nextLine();
+		
+		switch (gender)	// Check letter to match M or F.
+		{
+		case "m": break;	// do nothing
+		case "M": break;	// do nothing
+		case "f": break;	// do nothing
+		case "F": break;	// do nothing
+		default:			// Output Error and Prompt user to enter again
+			while ((!"m".equals(gender)) && (!"M".equals(gender)) && (!"f".equals(gender)) && (!"F".equals(gender)))
+			{
+				System.out.println("***Invalid Input.***");
+				System.out.println("Are you male or female? Type M or F.");
+				gender = kb.nextLine();
+				
+			}
+		}
+
+		// Checks for correct string value of Male or Female.
+		if ((gender.equals("m")) || (gender.equals("M")) || (gender.equals("f")) || (gender.equals("F")))
+		{}	
+			// Do Nothing and Continue
+		else
+		{
+			// Output Error and Prompt user to enter again
+			while ((!gender.equals("m")) && (!gender.equals("M")) && (!gender.equals("f")) && (!gender.equals("F")))
+			{
+			System.out.println("***Invalid Input.***");
+			System.out.println("Are you male or female? Type M or F.");
+			gender = kb.nextLine();
+			}
+		}
+*/
+		
+		// Enter AGE.
+		System.out.println("Please enter your age.");
+			while (!kb.hasNextInt()) kb.next();
+			age = kb.nextInt();
+		
+		// Enter WEIGHT.
+		System.out.println("Please enter your weight. (Pounds, lb(s))");
+			while (!kb.hasNextInt()) kb.next();
+			weight = kb.nextInt();
+		
+		// Enter HEIGHT.
+		System.out.println("Please enter your height. (Inches, in)");
+			while (!kb.hasNextInt()) kb.next();
+			height = kb.nextInt();
+		
+		System.out.print("-----------------------------------------------------");		// Print Lines.
+		System.out.println("-----------------------------------------------------");
+		
+	// Output information.
+		//System.out.println("Name: " + name);
+		//System.out.println("Gender: " + gender);
+		System.out.println("Age: " + age + " year(s)");
+		System.out.println("Weight: " + weight + " lb(s)");
+		System.out.println("Height: " + height + " in");
+		
+		System.out.print("-----------------------------------------------------");		// Print Lines.
+		System.out.println("-----------------------------------------------------");
+		
+	// Calculate BMR.
+		/*switch (gender)
+		{
+		case "m":
+		case "M":	// Male.
+			BMR = 66 + (6.30 * weight) + (12.90 * height) - (6.80 * age);
+			break;
+		case "f":
+		case "F":	// Female.
+			BMR = 655 + (4.30 * weight) + (4.70 * height) - (4.70 * age);
+			break;
+		default:
+			System.out.println("ERROR: Gender did not match correct letter for some reason. Gender: " + gender);
+		}*/
+		
+		// Output BMR.
+		DecimalFormat df = new DecimalFormat("#0.00"); 
+		
+		BMRf = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+		BMRm = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+		System.out.println("Your female BMR is: " + df.format(BMRf));
+		System.out.println("Your male BMR is: " + df.format(BMRm));
+		
+		// Calculate how much chocolate bars it takes to satisfy BMR.
+		chocolateBars = BMRf / chocolateBarCalories;
+		System.out.println("You should eat " + df.format(chocolateBars) + " chocolate bars if you are a female to maintain your current weight.");
+		chocolateBars = BMRm / chocolateBarCalories;
+		System.out.println("You should eat " + df.format(chocolateBars) + " chocolate bars if you are a male to maintain your current weight.");
+	}
+	
+	public static void JOptionPane()
+	{
+
+		// Lets the user know what program is running.
+			JOptionPane.showMessageDialog(null, 
+					"Hi and welcome."
+					+ "\nThis program will calculate your basal metabolic rate, or BMR. "
+					+ "\nBMR is the number of calories your body needs to maintain your weight if you do no exercise.");
+			
+		// Prompts user to enter information.
+			// Enter AGE.
+			System.out.println("Please enter your age.");
+				try {
+			    	String ageString = JOptionPane.showInputDialog("Please enter your age.");
+						age = Integer.parseInt(ageString);
+			    } catch (NumberFormatException e) {
+			        //error
+			    	JOptionPane.showMessageDialog(null, 
+				    		"ERROR (NumberFormatException): Value must be an integer!",
+				    		"NumberFormatException",
+				    		JOptionPane.ERROR_MESSAGE,
+				    		null);
+			    	System.exit(0);
+			    }
+			
+			// Enter WEIGHT.
+			System.out.println("Please enter your weight. (Pounds, lb(s))");
+				try {
+					String weightString = JOptionPane.showInputDialog("Please enter your weight. (Pounds, lb)");
+						weight = Double.parseDouble(weightString);
+			    } catch (NumberFormatException e) {
+			        //error
+			    	JOptionPane.showMessageDialog(null, 
+			    			"ERROR (NumberFormatException): Value must be an integer!",
+			    			"NumberFormatException",
+			    			JOptionPane.ERROR_MESSAGE,
+			    			null);
+			    	System.exit(0);
+			    }
+			
+			// Enter HEIGHT.
+			System.out.println("Please enter your height. (Inches, in)");
+				try {
+					String heightString = JOptionPane.showInputDialog("Please enter your height. (Inches, in)");
+						height = Double.parseDouble(heightString);
+			    } catch (NumberFormatException e) {
+			        //error
+			    	JOptionPane.showMessageDialog(null, "ERROR (NumberFormatException): Value must be an integer!");
+			    	System.exit(0);
+			    }
+			
+		// Output information.
+			System.out.println("Age: " + age + " year(s)");
+			System.out.println("Weight: " + weight + " lb(s)");
+			System.out.println("Height: " + height + " in");
+			
+		// Calculate BMR.
+			DecimalFormat df = new DecimalFormat("#0.00"); 
+			
+			BMRf = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+			BMRm = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+			System.out.println("Your female BMR is: " + df.format(BMRf));
+			System.out.println("Your male BMR is: " + df.format(BMRm));
+			
+			// Calculate how much chocolate bars it takes to satisfy BMR.
+			chocolateBars = BMRf / chocolateBarCalories;
+			System.out.println("You should eat " + df.format(chocolateBars) + " chocolate bars if you are a female to maintain your current weight.");
+			chocolateBars = BMRm / chocolateBarCalories;
+			System.out.println("You should eat " + df.format(chocolateBars) + " chocolate bars if you are a male to maintain your current weight.");
+	}
+}

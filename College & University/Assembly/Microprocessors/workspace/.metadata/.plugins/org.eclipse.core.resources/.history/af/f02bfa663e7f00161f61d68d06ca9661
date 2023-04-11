@@ -1,0 +1,63 @@
+		.equ CPU_ID, 0x01001000				# The base address of the CPU_ID module
+		.equ RED_LED, 0x10000010			#
+		.equ GREEN_LED,	0x10000000			# Finish these .equ statements using the address map!
+		.equ SLIDER_SWITCHES, 0x10000030
+		.equ PUSH_BUTTONS, 0x10000020
+		
+		.text 			# The text region indicates the start of instructions
+
+		.global main
+
+main:	nop
+						
+		movia	r15,CPU_ID	# This loads the BASE address of the CPU ID into r15
+		ldw	r5,0(r15)		# Reads in the 32-bit value at the address in r15 to r5
+		
+		ldw	r6,4(r15)		# Finish this instruction to load the 32-bit value at
+							# the address of r15 + 1 (really +4 since it is 32-bits!)
+
+		nop					# insert a breakpoint here and examine r5 and r6 in the debugger
+							# What is the CPU_ID? (CPU_ID base address + 0)?
+							# What is the timestamp (CPU_ID base address + 4)?
+							
+							# You can lookup the value of the timestamp on a site like
+							# http://www.epochconverter.com/ to find the exact date and
+							# time the soft processor was compiled.
+
+							
+							# Now examine this location in memory (0x01001000) using the
+							# memory window of the debugger (top right of the screen, click
+							# memory then click the plus to add a value). Each row is 16 bytes
+							# of memory, starting in this case with 0x01001000 for the first four
+							# bytes, followed on the right by 0x0101004 for the timestamp
+							
+loop:	nop
+							# THE MAIN LOOP STARTS HERE
+
+		# read SLIDER_SWITCHES value into r7
+		# store r7 value into RED_LED
+		ldw r7,0(SLIDER_SWITCHES)
+		stw r7,0(RED_LED)
+
+		ldw r7,0(PUSH_BUTTONS)
+		stw r7,0(GREEN_LED)
+
+
+
+							# Simply read the value from the slider switches and store it
+							# on the red LEDs, then read the value from the pushbuttons and
+							# store it on the Green LEDs.
+							
+							# Use movia instructions to setup memory addresses with
+							# the values from the .equ statements above.
+							
+							# You could setup all four addresses once in separate registers,
+							# or you could re-use the same register four times for all
+							# four memory accesses.
+
+
+
+
+		br	loop			# END OF LOOP
+
+		.end

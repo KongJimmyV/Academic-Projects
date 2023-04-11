@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class NumbersFormatDemo {
+
+	public static void main(String[] args) {
+		
+		try {
+		System.out.println("Enter favorite number cantaining decimals...");
+		Scanner s = new Scanner(System.in);
+		
+		String input = s.nextLine();
+		double number = Double.parseDouble(input);
+		
+		System.out.println(input = " is an interesting number.");
+		}
+		catch(Exception e) {
+			String msg = "An Unexpected Exception has occured.\n"
+					+ "--------------------------------------------------------------------\n"
+					+ e.toString();
+			System.out.println(msg);
+		}
+	}
+
+}

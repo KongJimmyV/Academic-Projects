@@ -1,0 +1,1 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Eyeh82Or8FwCb8AefiJF0tvxS6dpgB'

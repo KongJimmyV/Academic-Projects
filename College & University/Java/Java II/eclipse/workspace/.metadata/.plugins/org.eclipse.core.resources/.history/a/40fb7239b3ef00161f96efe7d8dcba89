@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class GotMilk01 {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the number of donuts: ");
+		Scanner s = new Scanner(System.in);
+		int donutCount = s.nextInt();
+		
+		System.out.println("Enter the number of glasses of milk:");
+		int milkCnt = s.nextInt();
+		
+		try {
+//			if(milkCnt == 0) {
+//				System.out.println("That just isn't right!");
+//				System.exit(0);
+//			}
+			
+			double donutsPerGlass = donutCount / milkCnt;
+			System.out.println(donutCount+ " donuts");
+			System.out.println(milkCnt + " glasses of milk");
+			System.out.println("You have " + donutsPerGlass + " donuts for each glash of milk.");
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+			
+		}
+	}
+
+}

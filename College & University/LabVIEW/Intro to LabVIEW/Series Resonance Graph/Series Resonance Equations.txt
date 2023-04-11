@@ -1,0 +1,28 @@
+Series Resonance Circuit Equations
+
+*RLC Band Pass
+	Q = XL/R
+	BW = fr/Q
+	fr = 1/(2*(PI)*sq(L*C))
+	f1 = fr - BW/2
+	f2 = fr - BW/2
+	Gain(dB) = 20log(Vout/Vin)
+	Gain(dB) = 20log(R / sq (R^2 + (XC - XL)^2))
+
+*RL Low Pass
+	fc = R/(2*(PI)*L
+	Gain(dB) = 20log(R / sq(R^2 + XL^2))
+	
+
+RL High Pass
+	fc = R/(2*(PI)*L
+	Gain(dB) = 20log(XL / sq(R^2 + XL^2))
+	
+
+*RC High Pass
+	fc = 1/(2*(PI)*R*C
+	Gain(dB) = 20log(R / sq(R^2 + XC^2))
+	
+	
+	
+	

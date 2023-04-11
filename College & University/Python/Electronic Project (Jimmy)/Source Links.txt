@@ -1,0 +1,44 @@
+Python Basics
+- https://www.learnpython.org/en/Basic_Operators
+
+Neural Networks
+- https://www.youtube.com/watch?v=p69khggr1Jo
+
+TFT Guide
+- https://learn.adafruit.com/adafruit-2-4-pitft-hat-with-resistive-touchscreen-mini-kit?view=all#overview
+
+Remote Control
+- https://www.realvnc.com/download/viewer/
+
+Simple Computer Vision + MORE GUIDES:
+- https://jeremykarnowski.wordpress.com/2015/08/26/low-cost-raspberry-pi-robot-with-computer-vision/
+
+How to directly connect to the raspberry pi with a PC or laptop.
+- https://pihw.wordpress.com/guides/direct-network-connection/
+
+Enable VNC Server with RPi 3 console
+- https://www.raspberrypi.org/documentation/remote-access/vnc/
+
+DHCP3-Server is now isc-dhcp-server
+- https://help.ubuntu.com/community/isc-dhcp-server
+
+PiCamera Doc
+- http://picamera.readthedocs.io/en/release-1.9/index.html
+
+pigpio (PiGPIO)
+- http://abyz.co.uk/rpi/pigpio/index.html
+
+Ninja-IDE
+- https://arghbox.wordpress.com/2013/06/09/ninja-ide-on-the-raspberry-pi/
+
+OpenCV-3.2.0 Guide
+- http://pklab.net/?id=392&lang=EN
+
+PIGPIOD auto-startup
+- https://www.raspberrypi.org/forums/viewtopic.php?f=32&t=103752
+
+matplotlib install
+- http://matplotlib.org/2.0.0/users/installing.html
+
+Python Multi-Threading Doc
+- https://www.tutorialspoint.com/python3/python_multithreading.htm

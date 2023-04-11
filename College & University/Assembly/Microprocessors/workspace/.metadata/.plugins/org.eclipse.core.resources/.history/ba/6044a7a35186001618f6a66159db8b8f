@@ -1,0 +1,66 @@
+		.equ SWITCHES, 	0x10000030 # The base address of the slider switches
+		.equ BUTTONS, 	0x10000020 # The base address of the pushbuttons
+		.equ LEDS_RED,	0x10000010 # The base address of the RED LEDs
+
+		.text
+		.global main
+
+##################################
+##  Add and Multply Calculator  ##
+##################################
+main:	nop
+
+		add		r10,r0,r0		# initialize the storage register as zero
+
+	####################################################################
+	##  Preload the other memory addresses into registers if desired  ##
+	####################################################################
+		movia	r20, SWITCHES
+		movia	r21, BUTTONS
+		movia	r22, LEDS_RED
+
+loop:	nop						#Start of the main loop
+
+		ldw		r6,0(r21)		# Start by reading in the BUTTONS
+
+								# Then start bitmasking & branching to complete the operations
+
+								# the first test is provided as an example:
+
+		andi	r7,r6,0b0001	# AND r6 with 0b0001 and put in r7
+		beq		r7,r0,skip1 	# if bit 1 is NOT SET (r7 = 0) skip to the next bit to check
+
+								# if we get here, bit 1 WAS set
+wait1:	ldw		r10,0(r20)		# load the slider switches into r10 (assumes r20 has been used for the slider swithches above)
+		ldw		r6, 0(r21)		# Add a small loop here to repeatedly read the buttons and compare to r0
+		bne		r0, r6, wait1	# as long as the buttons are not zero, keep reading them and testing again
+
+		br		done			# Skip to the end of the loop, we don't want to do any other tests
+
+
+
+skip1: 							# Add the other tests here, chaning them together as with the first
+								# Test for r6 being equal to 2 and perform multiplication
+
+
+
+
+skip2:							# Test for r6 being equal to 4 and perform addition
+
+
+
+
+
+
+skip3:							# Don't test anything here, this is the 'fallback' just display r10
+
+
+
+
+done:							# All done
+
+		stw		r10, 0(r22)		# Light Red LEDS
+
+		br		loop			# return to the main loop
+
+		.end

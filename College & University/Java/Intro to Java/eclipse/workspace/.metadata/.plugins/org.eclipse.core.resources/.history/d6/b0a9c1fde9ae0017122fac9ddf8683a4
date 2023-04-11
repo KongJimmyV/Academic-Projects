@@ -1,0 +1,14 @@
+
+public class StudentGradeDemo {
+	
+	// Main Demo starts here.
+	public static void main(String[] args) {
+		
+		// Create an object for StudentGrade.java
+		StudentGrade grade = new StudentGrade();
+		
+		// Start the Main Menu of the grading program
+		grade.startGrading();
+	}
+
+}

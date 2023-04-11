@@ -1,0 +1,240 @@
+
+#######################################
+ * File:            experimentation.txt
+ * Project Name:    Assignment 3
+ * Date Modified:   11/28/2022
+ * Class:           CS457 (Fall 2022)
+ * Instructor:      Dr. Jason Sauppe
+#######################################
+
+=============
+=== Notes ===
+=============
+
+    When observing the training and results for a 500 epoch limit and a batch size of 50:
+        - A larger alpha seems to decrease the training time, but also seems to decrease the validation accuracy.
+        - A smaller alpha seems to increase the training time, but also seems to increase validation accuracy.
+        - When alpha becomes larger, the network seems to decrease in validation accuracy.
+        - When alpha becomes smaller, the network seems to get stuck with a validation accuracy that does not improve.
+        
+        - A larger lambda seems to increase validation accuracy.
+        - A smaller lambda seems to decrease validation accuracy.
+        - When lambda becomes larger, the network halts training faster and the validation accuracy seems to worsen.
+        - When lambda becomes smaller, the validation accuracy seems to become decrease.
+        
+        - The logistic function did the worst on all "image-XX.dat" files and the "mnist.dat" file
+        - The ReLU, Softplus and Hyperbolic Tangent functions did the best on the "image-XX.dat" files.
+        - The ReLU, Softplus and Hyperbolic Tangent functions seem to continue to improve on the "image-XX.dat" files.
+            - I believe with more epoches and enough time, the valid accuracy would increase even higher on the "image-XX.dat" files.
+                This is because I observed with a verbosity of 3, the cost continuing to decrease while the training accuracy increased.
+        - The Hyperbolic Tangent function did the worst on the "mnist.dat" file
+        - The ReLU, Softplus functions did the best on the "image-XX.dat" files.
+        
+        
+========================================================
+=== Experimentation Results (Top 3 Results per File) ===
+========================================================
+    *** image-05.dat ***
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.258337
+            ValidAcc: 0.247012
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.237432
+            ValidAcc: 0.219124
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.230961
+            ValidAcc: 0.215139
+        
+    *** image-10.dat *** 
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.258835
+            ValidAcc: 0.258964
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.258835
+            ValidAcc: 0.252988
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.291190
+            ValidAcc: 0.241036
+        
+    *** image-15.dat *** 
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.290692
+            ValidAcc: 0.286853
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.335988
+            ValidAcc: 0.278884
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.315082
+            ValidAcc: 0.270916
+        
+    *** image-20.dat *** 
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.282230
+            ValidAcc: 0.276892
+        -f data/image-20.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.344948
+            ValidAcc: 0.274900
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.267795
+            ValidAcc: 0.264940
+        
+    *** mnist.dat *** 
+        -f data/mnist.dat -h 1 4 -a 0.01 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.756500
+            ValidAcc: 0.756000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.756750
+            ValidAcc: 0.743000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.750750
+            ValidAcc: 0.728000
+        
+=======================
+=== Experimentation ===
+=======================
+    ********************
+    *** image-05.dat ***
+        -f data/image-05.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-05.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g relu -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-05.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-05.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.258337
+            ValidAcc: 0.247012
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.230961
+            ValidAcc: 0.215139
+        -f data/image-05.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.237432
+            ValidAcc: 0.219124
+            
+    ********************
+    *** image-10.dat *** 
+        -f data/image-10.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-10.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g relu -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-10.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-10.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.291190
+            ValidAcc: 0.241036
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.258835
+            ValidAcc: 0.258964
+        -f data/image-10.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.258835
+            ValidAcc: 0.252988
+            
+    ********************
+    *** image-15.dat *** 
+        -f data/image-15.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-15.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g relu -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-15.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-15.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.335988
+            ValidAcc: 0.278884
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.315082
+            ValidAcc: 0.270916
+        -f data/image-15.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.290692
+            ValidAcc: 0.286853
+        
+    ********************
+    *** image-20.dat *** 
+        -f data/image-20.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-20.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g relu -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-20.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-20.dat -h 1 25 -a 0.01 -e 500 -m 50 -l 0.001 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-20.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.205575
+            ValidAcc: 0.205179
+        -f data/image-20.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.461921
+            ValidAcc: 0.260956
+        -f data/image-20.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.403683
+            ValidAcc: 0.262948
+        -f data/image-20.dat -h 1 25 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.344948
+            ValidAcc: 0.274900
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.001 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.215530
+            ValidAcc: 0.201195
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.277252
+            ValidAcc: 0.207171
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.267795
+            ValidAcc: 0.264940
+        -f data/image-20.dat -h 1 25 -a 0.5 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.282230
+            ValidAcc: 0.276892
+            
+    ********************
+    *** mnist.dat *** 
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g logistic -v 3
+            TrainAcc: 0.111000
+            ValidAcc: 0.119000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.756750
+            ValidAcc: 0.743000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g softplus -v 3
+            TrainAcc: 0.750750
+            ValidAcc: 0.728000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.005 -w 0.1 -g tanh -v 3
+            TrainAcc: 0.111000
+            ValidAcc: 0.119000
+        -f data/mnist.dat -h 1 4 -a 0.01 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.756500
+            ValidAcc: 0.756000
+        -f data/mnist.dat -h 1 4 -a 0.1 -e 500 -m 50 -l 0.005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.752250
+            ValidAcc: 0.727000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.05 -w 0.1 -g relu -v 3
+            TrainAcc: 0.215500
+            ValidAcc: 0.227000
+        -f data/mnist.dat -h 1 4 -a 0.05 -e 500 -m 50 -l 0.0005 -w 0.1 -g relu -v 3
+            TrainAcc: 0.703750
+            ValidAcc: 0.652000

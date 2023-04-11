@@ -1,0 +1,8 @@
+int num1;
+int num2;
+
+num1 = 20 - 30;
+num2 = 30 - 20;
+
+print num1;
+print num2;

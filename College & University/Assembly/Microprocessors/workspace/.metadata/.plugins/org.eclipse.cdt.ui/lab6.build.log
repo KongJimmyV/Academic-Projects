@@ -1,0 +1,8 @@
+
+**** Build of configuration Nios II for project lab6 ****
+
+make all 
+Info: Building ../lab6_bsp/
+make --no-print-directory -C ../lab6_bsp/
+[BSP build complete]
+[lab6 build complete]

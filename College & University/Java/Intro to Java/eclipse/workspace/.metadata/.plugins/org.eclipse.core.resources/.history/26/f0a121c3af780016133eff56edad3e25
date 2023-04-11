@@ -1,0 +1,49 @@
+package chapter1;
+
+import java.util.Scanner;
+
+//Starting point of class file
+public class TempConvert {
+
+	//Globally defines variables.
+	static double fahrenheit = 0;	//temperature
+	static double celsius = 0;		//temperature
+	private static Scanner s;		//text scanner
+
+	//Start of the main program
+	public static void main(String[] args) {
+		
+		//Lets the user know what program it is.
+		System.out.println("Hi and welcome.");
+		System.out.println("I will convert a temperture from Fahrenheit to Celsius.");
+		System.out.println("");
+		
+		//Tells the user to enter a Fahrenheit temperature.
+		System.out.println("Please enter a Fahrenheit temperature...");
+		
+		//Lets the user enter a temperature.
+		s = new Scanner(System.in);		//defines a variable using scanner system
+		fahrenheit = s.nextInt();
+		
+		ConvertFtoC();	//Calls a conversion calculation from Fahrenheit to Celsius.
+		
+		//Prints the temperature in Fahrenheit.
+		System.out.println("");
+		System.out.println("***");
+		System.out.println("The converted temperature to celsius is...");
+		System.out.println(celsius);
+		
+		System.out.println("");
+		
+		s.close();
+		//End of Program.
+	}
+	
+	public static void ConvertFtoC()
+	{
+		//Calculates and converts from Fahrenheit to Celsius.
+		celsius = 5.0/9 * (fahrenheit - 32);
+		return;
+	}
+
+}

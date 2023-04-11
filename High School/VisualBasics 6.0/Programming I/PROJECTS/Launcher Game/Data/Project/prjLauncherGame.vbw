@@ -1,0 +1,6 @@
+frmLauncherGameVS = 100, 100, 809, 717, , 75, 75, 784, 692, C
+frmMainMenu = 250, 250, 959, 867, , 250, 250, 959, 867, C
+frmLauncherGameAIEasy = 200, 200, 909, 817, , 175, 175, 884, 792, C
+frmLauncherGameAINormal = 250, 250, 959, 867, , 225, 225, 934, 842, C
+frmLauncherGameAIFight = 150, 150, 859, 767, , 125, 125, 834, 742, C
+frmLauncherGameAIHard = 0, 0, 0, 0, C, 150, 150, 1491, 813, C

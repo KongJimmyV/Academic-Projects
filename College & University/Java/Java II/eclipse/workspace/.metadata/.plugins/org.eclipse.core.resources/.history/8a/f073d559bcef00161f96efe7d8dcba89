@@ -1,0 +1,19 @@
+
+public class DoDivision {
+
+	public static void main(String[] args) {
+		
+		DoDivision doIt = new DoDivision();
+		
+		int num = 100;
+		int denom = 0;
+		
+		String msg = "Quotient = " + doIt.divideIt(num, denom);
+		System.out.println(msg);
+	}
+	
+	private double divideIt(int num, int denom) {
+		return (double)num/denom;
+	}
+
+}

@@ -1,0 +1,7 @@
+rhits: 2891
+whits: 711
+rmisses: 329
+wmisses: 69
+hrate: 0.9005
+wb: 69
+wt: 0

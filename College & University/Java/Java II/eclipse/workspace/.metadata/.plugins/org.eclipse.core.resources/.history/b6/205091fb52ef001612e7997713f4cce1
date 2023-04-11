@@ -1,0 +1,65 @@
+package person;
+
+public class InheritanceDemo {
+
+	public static void main(String[] args) {
+		
+		Person[] people = new Person[4];
+		people[0] = new Undergraduate("SpongeBob", 0, 1);
+		people[1] = new Undergraduate("Patrick", 1, 1);
+		
+		Student squidward = new Student("Squidward", 3);
+		people[2] = squidward;
+		people[3] = new Undergraduate("Sandy", 4, 4);
+		
+		for(Person p: people) {
+			p.writeOutput();
+			System.out.println();
+		}
+		
+		Person sb = people[0];
+		Person pat = people[1];
+		if(sb.equals(pat)) {
+			System.out.println("Yes");
+		}
+		else {
+			System.out.println("No");
+		}
+		
+		/*
+		// Test student
+		Student s = new Student("Fred", 9876552);
+		s.writeOutput();
+		System.out.println();
+		
+		s.reset("Derf", 3011320);
+		s.writeOutput();
+		System.out.println();
+		
+		// Test undergraduate
+		Undergraduate u = new Undergraduate("Fred", 9876552, 4);
+		Undergraduate u2 = new Undergraduate("Fred", 9876552, 4);
+		u.writeOutput();
+		System.out.println();
+		
+		u.reset("Derf", 3011320, 1);
+		u.writeOutput();
+		System.out.println();
+		
+		System.out.println(u.equals(u2));
+		
+		
+		Person p = new Person("bob");
+		Person p2 = new Person("bob");
+		
+		System.out.println(p.equals(p2));
+		
+		InheritanceDemo.compareNumbers(s, s);*/
+	}
+
+	public static void compareNumbers(Student s1, Student s2) {
+		if(s1.getStudentNumber() == s2.getStudentNumber()) {
+			
+		}
+	}
+}

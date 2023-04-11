@@ -1,0 +1,44 @@
+#lang racket
+
+;;;  Author:         Kong Jimmy Vang
+;;;  File:           simplify.rkt
+;;;  Project:        hw2 (Scheme Coding and Grammars - Expression Simplification)
+;;;  Class:          CS 421
+;;;  Date Created:   2/19/2021
+;;;  Date Modified   2/27/2021
+
+(define (atom? x) (and (not (null? x)) (not (pair? x))))
+(define (constant? E) (number? E))
+(define (variable? E) (symbol? E))
+(define (same-variable? v1 v2) (and (variable? v1) (variable? v2) (eq? v1 v2)))
+(define (make-constant x) x)
+(define (make-sum a1 a2) (list '+ a1 a2))
+(define (make-diff a1 a2) (list '- a1 a2))
+(define (make-product m1 m2) (list '* m1 m2))
+(define (make-quotient m1 m2) (list '/ m1 m2))
+(define (sum? E) (if (not (atom? E)) (eq? (car E) '+) '()))
+(define (diff? E) (if (not (atom? E)) (eq? (car E) '-) '()))
+(define (addend s) (cadr s))
+(define (augend s) (caddr s))
+(define (product? E) (if (not (atom? E)) (eq? (car E) '*) '()))
+(define (quotient? E) (if (not (atom? E)) (eq? (car E) '/) '()))
+(define (multiplier p) (cadr p))
+(define (multiplicand p) (caddr p))
+(define (pick E1 E2 E3) (null?))
+
+;;; Takes a scheme expression and returns a simplified experssion.
+(define (simplify E)
+  (display "============\n")
+  (display E)
+  (display "\n")
+  (cond ((null? E ) (display "error\n") 'error)
+        ((number? E) (display "number\n") E)
+        ((variable? E) (display "variable\n") E)
+        ((sum? E) (display "sum\n") (make-sum (addend E) (augend E)))
+        ((diff? E) (display "diff\n") (make-diff (addend E) (augend E)))
+        ((product? E) (display "product\n") (make-product (addend E) (augend E)))
+        ((quotient? E) (display "div\n") (make-quotient (addend E) (augend E)))
+        (else (display "ELSE\n"))
+        ))
+
+(provide simplify)

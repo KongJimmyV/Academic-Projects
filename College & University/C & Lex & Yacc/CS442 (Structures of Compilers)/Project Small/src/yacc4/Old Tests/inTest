@@ -1,0 +1,431 @@
+
+int numArray[11];
+
+int num1;
+int num2;
+int num3;
+int num4;
+int num5;
+int num6;
+int num7;
+int a1;
+int b1;
+int n1;
+int n2;
+int n3;
+int n4;
+
+int i;
+int counter;
+
+int k; 
+int t; 
+int f1() { 
+    return k*(t+3); 
+} 
+
+int x; 
+int y; 
+void aa(int i, int z) {
+    int a;
+    int b1;
+    a = i+z; 
+    b1 = i * z; 
+    print(i); 
+    print(z); 
+    print(i+z); 
+    print(a); 
+    print(b1); 
+    print(x); 
+    print(y); 
+    x = b1; 
+} 
+
+
+print(10000001);
+num1 = 20 + 30;
+num2 = 30 + 20;
+num3 = num1 + num2;
+
+print(num1);
+print(num2);
+print(num3);
+
+print(10000002);
+num1 = 20 - 30;
+num2 = 30 - 20;
+num3 = num1 - num2;
+
+print(num1);
+print(num2);
+print(num3);
+
+print(10000003);
+num1 = 20 * 30;
+num2 = 30 * 20;
+num3 = 300 * 20;
+num4 = 30 * 200;
+num5 = num1 * num2;
+
+print(num1);
+print(num2);
+print(num3);
+print(num4);
+print(num5);
+
+print(10000004);
+num1 = 20 / 30;
+num2 = 30 / 20;
+num3 = 300 / 20;
+num4 = 30 / 200;
+num5 = num3 / num2;
+
+print(num1);
+print(num2);
+print(num3);
+print(num4);
+print(num5);
+
+print(10000005);
+num1 = 20 % 30;
+num2 = 30 % 20;
+num3 = 300 % 20;
+num4 = 30 % 200;
+num5 = num1 % num2;
+
+print(num1);
+print(num2);
+print(num3);
+print(num4);
+print(num5);
+
+print(10000006);
+num1 = -30;
+num2 = -   20;
+num3 = --30;
+num4 = -- 20;
+num5 = -(-30);
+num6 = -(- 20);
+num7 = -num6;
+
+print(num1);
+print(num2);
+print(num3);
+print(num4);
+print(num5);
+print(num6);
+print(num7);
+
+print(10000007);
+num1 = 1^1;
+num2 = 2^2;
+num3 = 3^3;
+num4 = 4^4;
+num5 = 10^4;
+num6 = 10^5;
+num7 = num2^num2;
+
+print(num1);
+print(num2);
+print(num3);
+print(num4);
+print(num5);
+print(num6);
+print(num7);
+
+print(10000008);
+num1 = 10;
+num2 = 20;
+num3 = 0;
+
+
+
+if (num2+10+9 < 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+10 <= 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+10 == 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+10 >= 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+11 > 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+11 != 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+
+
+if (num2+10+11 < 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+11 <= 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+11 == 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+9 >= 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+9 > 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+if (num2+10+10 != 2*num2) {
+    print(num1);
+    print(num2);
+}
+print(num3);
+
+
+
+print(num1);
+print(num2);
+
+
+
+print(10000009);
+
+a1 = 1;
+b1 = 1;
+
+print(100);
+if ((a1 == b1)) {
+    print(a1);
+}
+
+print(101);
+if (!(a1 != b1)) {
+    print(a1);
+}
+
+print(102);
+if ((a1 == b1) && (b1 == a1)) {
+    print(a1);
+}
+
+print(103);
+if ((a1 != b1) && (b1 == a1)) {
+    print(a1);
+}
+
+print(104);
+if ((a1 == b1) && (b1 != a1)) {
+    print(a1);
+}
+
+print(105);
+if ((a1 != b1) || (b1 != a1)) {
+    print(a1);
+}
+
+print(106);
+if ((a1 == b1) || (b1 != a1)) {
+    print(a1);
+}
+
+print(107);
+if ((a1 != b1) || (b1 == a1)) {
+    print(a1);
+}
+
+
+
+
+
+print(200);
+if (!(a1 == b1) && !(b1 == a1)) {
+    print(a1);
+}
+
+print(201);
+if (!(a1 != b1) && !(b1 == a1)) {
+    print(a1);
+}
+
+print(202);
+if (!(a1 == b1) && !(b1 != a1)) {
+    print(a1);
+}
+
+print(203);
+if (!(a1 != b1) || !(b1 != a1)) {
+    print(a1);
+}
+
+print(204);
+if (!(a1 == b1) || !(b1 != a1)) {
+    print(a1);
+}
+
+print(205);
+if (!(a1 != b1) || !(b1 == a1)) {
+    print(a1);
+}
+
+print(206);
+if (!(!(a1 == b1) || !(b1 != a1))) {
+    print(a1);
+}
+
+print(10000010);
+a1 = 1;
+b1 = 2;
+
+print(100);
+print(101);
+print(102);
+print(103);
+
+printlines(0);
+printlines(-10);
+printlines(-20);
+
+printlines(1);
+print(104, 105, 106, 107);
+printlines(2);
+print(a1, b1, b1, a1);
+printlines(a1);
+print(b1, a1, a1, b1);
+printlines(b1);
+print(a1, a1, b1, b1);
+printlines(a1 + b1 + 2^2);
+print(a1, a1, b1, b1);
+printlines(b1 - a1);
+
+print(1, 2, 3, 4);
+printspaces(3); printspaces(-30);
+print(5, 6, 7, 8);
+printspaces(a1 + b1); printspaces(-a1 - b1);
+print(9, 10, 11, 12);
+printspaces(0);
+print(13, 14, 15, 16);
+
+n1 = 1;
+n2 = n1 + 1;
+n3 = n1 + n2 + 1;
+n4 = n1 + n2 + n3 + 1;
+
+print(n1, n2, n3, n4);
+printlines(2);
+print(1000);
+
+read(n1, n2, n3, n4);
+print(n1, n2, n3, n4);
+printlines(1);
+
+print(10000011);
+a1 = 1;
+b1 = 2;
+
+print(100);
+
+if (a1 == b1 - 1) {
+    print(50);
+}
+
+if (a1 == b1) {
+    print(50);
+}
+
+if (a1 == b1) {
+    print(50);
+} else {
+    print(60);
+}
+
+if (a1 == b1 - 1) {
+    print(50);
+} else {
+    print(60);
+}
+
+print(101);
+
+print(10000012);
+counter = 0;
+
+while (counter <= 10) {
+    print(counter);
+    counter = counter + 1;
+}
+
+while (counter >= -10) {
+    print(counter);
+    counter = counter - 1;
+}
+
+print(10000013);
+for (i = 0; i < 10; i = i + 1) {
+    print(i);
+}
+
+//TEST1241lfg;sdg[]er[t]3453/yfdbcx,b.,a
+// COMMENT TEST
+/**/
+ * MULTI LINED COMMENT TEST
+ * MULTI LINED COMMENT TEST
+ * MULTI LINED COMMENT TEST
+ */
+
+print(10000014);
+
+num1 = 10 + 2;
+num2 = 20 * 3 + num1;
+i = 7;
+
+numArray[i] = 500;
+num1 = num2 + numArray[i] * 10;
+print(num1);
+print(num2);
+print(numArray[i]);
+
+print(10000015);
+k = 10; 
+t = 20; 
+print(f1()); 
+i = 2*f1()*2; 
+print(i);
+
+print(10000016);
+x = 10; 
+y = 20; 
+aa(x,y); 
+print(x);

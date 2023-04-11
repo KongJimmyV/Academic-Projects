@@ -1,0 +1,11 @@
+Kong Jimmy Vang
+CS419
+12/19/2018
+
+Analysis:
+    
+    In the final results from the Q-Learning, I can see from the results shown in the graph and final policy that it learns slow before finding a good policy from it's starting point. From the final policy of Q-Learning, the policy printed in "Final_Policy.txt" shows that in some states, the policy is not optimal. This problem might be caused by not having enough episodes to learn or by having control parameters that are not optimal or calculated optimally. I think maybe by adjusting the number of episodes or the control parameters and their functions, that we can get the entire policy to be more optimal. In the graph, the policy seems to stabilize it's own reward after episode ~2900. It's average reward from the graph seems to stay steady afterwards, on with the highest reward being as close as -51.88 on episode 4100.
+    
+    Also, I tried the version of Feature-Based Q-Learning proposed by the homework assignment. From the final policy, it seems to be very optimal in all of the states. For my policy, in all states except the very bottom row of states, they mostly go down and then converge towards the goal G. In the graph, in the test at episode 100, that policy seemed to be able to solve the path to the goal with a high reward. At episode 200 though, the reward heavily dropped. I think that can be explained, by the weight vectors being the wrong values during that episode for that policy. Otherwise, in the end, the policy starts to stabilize after the 300th episode with minor fluctuations in the reward.
+    
+    

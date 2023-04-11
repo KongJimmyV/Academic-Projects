@@ -1,0 +1,22 @@
+package chapter3;
+
+
+
+/*************************************************************************
+ * File Name:		RPS.java
+ * Created by: 		Jimmy Vang
+ * Date Started:	9/23/2016
+ * Date Finished: 	9/??/2016
+ * ***********************************************************************
+ * This program lets you play Rock, Paper, Scissors.
+ * ***********************************************************************
+*/
+
+public class RPS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

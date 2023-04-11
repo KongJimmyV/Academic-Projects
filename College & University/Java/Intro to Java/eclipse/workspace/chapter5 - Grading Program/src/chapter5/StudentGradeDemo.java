@@ -1,0 +1,63 @@
+package chapter5;
+
+import javax.swing.JOptionPane;
+////////////////////////////////////////////////////////////////////
+/*
+ * This class file demos the StudentGrade.java file.
+ * 
+ * File Name:	StudentGradeDemo.java
+ * Created by: 	Jimmy Vang
+ * Date:		Oct 12, 2016
+ * 
+ * Used with: 	StudentGrade.java
+ * 
+ */
+////////////////////////////////////////////////////////////////////
+
+public class StudentGradeDemo {
+	////////////////////////////////////////////////////////////////////
+	// Main Demo starts here.
+	public static void main(String[] args) {
+		
+		// Create an object for StudentGrade.java
+		StudentGrade grade = new StudentGrade();
+		
+		try {
+			while (true) {
+				
+				// Start the Main Menu of the grading program
+				grade.startMainMenu();
+				
+				// Restart program
+				grade.restart();
+			}
+		} 
+		catch (Throwable e) {
+			
+			// In case of an error, call the Exception Handler
+			exceptionHandler(e);
+		}
+	}
+	
+	////////////////////////////////////////////////////////////////////
+	// Handle Exception Errors here.
+	public static Throwable exceptionHandler(Throwable e) {
+		
+		// Number Format Error
+		if (e instanceof NumberFormatException) {
+			JOptionPane.showMessageDialog(null, "An error has occured (" + e + ").\n ", "NumberFormatException",
+					JOptionPane.ERROR_MESSAGE, null);
+			
+		// Null Error
+		} else if (e instanceof NullPointerException) {
+			JOptionPane.showMessageDialog(null, "An error has occured (" + e + "). A variable was pointed at Null.",
+					"NullPointerException", JOptionPane.ERROR_MESSAGE, null);
+			
+		// Other Errors
+		} else {
+			JOptionPane.showMessageDialog(null, "Error. An unknown error has occured.", "" + e,
+					JOptionPane.ERROR_MESSAGE, null);
+		}
+		return e;
+	}
+}

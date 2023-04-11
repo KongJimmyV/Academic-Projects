@@ -1,0 +1,51 @@
+			.text               # Instructions follow
+
+      		.global main        # makes label "main" globally known
+
+main:  							# Execution of the program starts here
+
+	RegistryDefinitions:
+			movia	r2,0x10000030		# 	set address from Slider Switches...		--> ...to R2
+			movia	r3,0x10000000		# 	set address from Green LEDS...			--> ...to R3
+			movia	r4,0x10000010		# 	set address from Red LEDS...			--> ...to R4
+
+	RegistryVariables:
+			movi	r9, 0				# 	set value 0	into R9
+			movi	r10,0				# 	set value 0 into R10
+
+
+turnOnAllLeds:					# TURN ON ALL LEDS
+			movi	r9,0b0011111111		# copy binary value into R9
+			movi	r10,0b1111111111	# copy binary value into R10
+			stw		r9,0(r3)			# store r9 value to r3 to turn on Green LEDS
+			stw		r10,0(r4)			# store r11 value to r4 to turn on Red LEDS
+
+
+turnOffAllLeds:					# TURN OFF ALL LEDS
+			movi	r9,0				# copy 0 into r9
+			movi	r10,0				# copy 0 into r11
+			stw		r9,0(r3)			# store r9 value to r3 reset Green LEDS
+			stw		r10,0(r4)			# store r11 value to r4 to reset Red LEDS
+
+
+loop:   						# THIS LOOP CHECKS LEDS, SWITCHES, AND BUTTONS AND DOES THE FOLLOWING.
+			nop							# The beginning of the main loop
+
+			ldw		r9,0(r2)			# read from address in R2 (switches) and store value in R9
+			addi	r9,r9,1				# set R9 to be equal to the sum of R9 + 1
+			stw		r9,0(r3)			# store the value in R9 to the address in R3 (Green LEDS change)
+
+			ldw		r10,0(r2)			# read from address in R2 (switches) and store value in R10
+			addi	r10,r10,0			# set R10 to be equal to the sum of R10 + 0
+			stw		r10,0(r4)			# store the value in R10 to the address in R4 (Red LEDS change)
+
+			br      loop        # Branch to loop
+
+
+
+       		.end                  		# The assembler will stop here
+
+
+
+
+

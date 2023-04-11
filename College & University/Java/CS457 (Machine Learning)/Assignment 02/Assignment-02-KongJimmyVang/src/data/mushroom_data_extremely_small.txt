@@ -1,0 +1,15 @@
+# Mushroom data set with fewer attributes
+
+# Attribute list
+3
+cap shape: b c x f k s
+cap surface: f g y s
+cap color: n b c g r p u e w y
+
+# Output classes
+: p=Poison e=Edible
+
+# Records
+x s n p
+x s y e
+b s w e

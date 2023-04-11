@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Lab_08 (Intro to Abstract Data Types)/src&apos;&#x0D;&#x0A;- Original project: &apos;Lab_07 (Recursion)&apos;&#x0D;&#x0A;- Destination element: &apos;Lab_08 (Intro to Abstract Data Types)/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     RecursionUI.java&#x0D;&#x0A;     Recursion.java" description="Copy compilation units" destination="=Lab_08 \(Intro to Abstract Data Types)/src" element1="/src&lt;{RecursionUI.java" element2="/src&lt;{Recursion.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1490374228109" units="2" version="1.0"/>
+</session>

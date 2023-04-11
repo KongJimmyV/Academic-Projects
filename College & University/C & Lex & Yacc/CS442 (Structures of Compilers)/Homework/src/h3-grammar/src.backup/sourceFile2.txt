@@ -1,0 +1,19 @@
+x = {a,b,c} + {d,e,f};
+y = {};
+z = {x};
+w = x + z;
+a = x + y + z + w;
+b = ( x + y + z + w) * y;
+t = x + y;
+u = z + {t,r,b};
+l = u * x;
+o = {a,b,c,d,e,t} * x;
+rLongStringNameTestWithNumbers123456 = x * a;
+
+
+
+rNewLinesTest = x * a;
+
+
+
+rNewLinesTest2 = x * a;

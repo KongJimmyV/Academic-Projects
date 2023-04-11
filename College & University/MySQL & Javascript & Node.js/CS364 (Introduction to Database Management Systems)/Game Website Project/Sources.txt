@@ -1,0 +1,70 @@
+
+Programming Sources:
+    Database
+        - MySQL
+            --- https://www.mysql.com/
+    Back End
+        - Node.js (Open-Source JavaScript)
+            --- https://nodejs.org/en/
+        - Express.js (Minimalist web framework for Node.js)
+            --- https://expressjs.com/
+    Front End
+        - pug.js (formerly known as Jade) 
+            --- https://expressjs.com/en/guide/using-template-engines.html
+            --- https://pugjs.org/api/getting-started.html
+    Helpful Resources
+        - npm.js 
+            --- https://www.npmjs.com/
+        - HTML Bootstrap: 5-Star Rating System 
+            --- https://www.npmjs.com/package/bootstrap-star-rating
+        - Stack Overflow
+            --- https://stackoverflow.com/
+    Images
+        - [Icon Image] Website favicon 
+            --- https://www.favicon.cc/?action=icon&file_id=677203
+        - Freepik
+            - https://www.freepik.com/
+            - https://www.freepik.com/free-vector/skull-gaming-with-joy-stick-emblem-modern-style_16720134.htm#query=gaming&position=0&from_view=keyword
+            - https://www.freepik.com/free-vector/abstract-neon-lights-background-concept_9989315.htm#query=gaming&position=24&from_view=keyword
+        - https://commons.wikimedia.org/wiki/File:Circle-icons-gamecontroller.svg
+        - https://commons.wikimedia.org/wiki/File:Video-Game-Controller-Icon-IDV-edit.svg
+        - https://commons.wikimedia.org/wiki/File:Video-Game-Controller-Icon-IDV-green.svg
+        - https://commons.wikimedia.org/wiki/File:Video-Game-Controller-Icon-D-Edit.svg
+        
+Game Sources:
+    Sites Used For Games
+        - https://github.com/topics/webgl-game
+        - https://github.com/topics/unity3d-game
+        - https://code-projects.org/c/app-projects/unity-projects
+        
+    Games To Prepare In Database
+        - https://github.com/guckstift/population
+        - https://github.com/Vechus/3d_chess
+        - https://github.com/cryptic-wizard/first-3d-platformer-webgl
+        - https://github.com/Svartskogen/Artifact
+        - https://code-projects.org/puzzle-game-in-unity-engine-with-source-code/
+        
+        - https://github.com/BooLeet/Dungeon-Warrior
+        - https://github.com/dkdk141/tanks
+        - https://github.com/raulgrell/tetris
+        - https://github.com/ryf1123/Oasis-in-the-Sky
+        - https://github.com/SardineFish/snake-remake
+        
+        - https://code-projects.org/zigzag-game-in-unity-engine-with-source-code/
+        - https://code-projects.org/jumper-game-in-unity-engine-with-source-code/
+        - https://code-projects.org/2d-airspace-game-using-unity-source-code/
+        - https://code-projects.org/space-shooter-game-using-unity-source-code/
+        - https://code-projects.org/3d-nightmare-shooter-game-using-unity-source-code/
+        
+        - https://github.com/BayatGames/RedRunner
+        - https://github.com/VarunRamakri7/BottomGun
+        - https://github.com/BryannYeap/a-heros-tale
+        - https://github.com/TARTIGA/2DRogueLikeGame_Unity
+        - https://github.com/knapovsky/bugs-escape-3d-webgl
+        
+        - https://github.com/magicznyprzemek/BCvSI-WebGL
+        
+    Games To Use In Demo
+        - https://github.com/devkiloton/SurvivorMode
+        - https://github.com/diegyoho/kokku-tetris (Maybe demo if enough time)
+        - My 'ModularMaze' Demo

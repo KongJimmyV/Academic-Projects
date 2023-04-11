@@ -1,0 +1,87 @@
+
+int aa;
+int bb;
+
+aa = 1;
+bb = 1;
+
+print 100;
+if ((aa == bb)) {
+    print aa;
+}
+
+print 101;
+if (!(aa != bb)) {
+    print aa;
+}
+
+print 102;
+if ((aa == bb) && (bb == aa)) {
+    print aa;
+}
+
+print 103;
+if ((aa != bb) && (bb == aa)) {
+    print aa;
+}
+
+print 104;
+if ((aa == bb) && (bb != aa)) {
+    print aa;
+}
+
+print 105;
+if ((aa != bb) || (bb != aa)) {
+    print aa;
+}
+
+print 106;
+if ((aa == bb) || (bb != aa)) {
+    print aa;
+}
+
+print 107;
+if ((aa != bb) || (bb == aa)) {
+    print aa;
+}
+
+
+
+
+
+print 200;
+if (!(aa == bb) && !(bb == aa)) {
+    print aa;
+}
+
+print 201;
+if (!(aa != bb) && !(bb == aa)) {
+    print aa;
+}
+
+print 202;
+if (!(aa == bb) && !(bb != aa)) {
+    print aa;
+}
+
+print 203;
+if (!(aa != bb) || !(bb != aa)) {
+    print aa;
+}
+
+print 204;
+if (!(aa == bb) || !(bb != aa)) {
+    print aa;
+}
+
+print 205;
+if (!(aa != bb) || !(bb == aa)) {
+    print aa;
+}
+
+print 206;
+if (!(!(aa == bb) || !(bb != aa))) {
+    print aa;
+}
+
+

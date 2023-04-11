@@ -1,0 +1,35 @@
+package chapter1;
+
+import java.util.Scanner;
+
+public class TempConvert {
+
+	static double fahrenheit = 0;
+	static double celsius = 0;
+	private static Scanner s;
+
+	public static void main(String[] args) {
+		System.out.println("Hi, welcome.");
+		System.out.println("I will convert a temperture from Fahrenheit to Celsius.");
+		System.out.println("");
+		System.out.println("Please type in a Fahrenheit tempature...");
+		
+		s = new Scanner(System.in);
+		fahrenheit = s.nextInt();
+		
+		ConvertFtoC();
+		
+		System.out.println("");
+		System.out.println("***");
+		System.out.println("The converted temperature in celsius is...");
+		System.out.println(celsius);
+		
+	}
+	
+	public static void ConvertFtoC()
+	{
+		celsius = 5.0/9 * (fahrenheit - 32);
+		return;
+	}
+
+}

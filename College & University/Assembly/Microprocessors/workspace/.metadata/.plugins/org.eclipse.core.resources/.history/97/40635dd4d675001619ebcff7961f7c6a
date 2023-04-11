@@ -1,0 +1,28 @@
+			.text                   # Instructions follow
+
+      		.global main            # makes label "main" globally known
+
+main:  		movia	r10,0x10000030	# Execution of the program starts here  ***(stores slider switches to r10)
+			movia	r11,0x10000000	# 										***(stores green leds to r11)
+			movia	r12,0x10000010	# 										***(stores red leds r12)
+
+
+			movi	r14,7			# this section turns on all LEDs
+			stw		r14,0(r11)		# this section turns on all LEDs
+			stw		r14,0(r12)		# this section turns on all LEDs
+
+
+			movi	r13,0			# sets r13 to a constant --> 0
+			stw		r13,0(r11)		# resets green leds
+			stw		r13,0(r12)		# resets red leds
+
+
+loop:   	nop						# The beginning of the main loop		(This loop checks switchs and lights leds)
+
+			ldw		r9,0(r10)		# read from the address in R10 (switches) and store value in R9
+			addi	r9,r9,1			# Set R9 to be equal to the sum of R9 + 1
+			stw		r9,0(r11)		# store the value in r9 to the address in R11 (lights)
+
+       	 	br      loop            # Branch to loop
+
+       		.end                    # The assembler will stop here

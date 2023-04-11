@@ -1,0 +1,630 @@
+
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Drawer {
+
+	// Globals.
+	static Robot r;
+	
+	static int DELAY = 500;
+	static int centerX;
+	static int centerY;
+	static int centerX_OFFSET = 0;	//DEFAULT: 0
+	static int centerY_OFFSET = 11; //DEFAULT: 11
+	static int P = 25;
+	
+	static int invX ;
+	static int invY;
+	static int dropX;
+	static int dropY;
+	
+	public static void main(String[] args) throws AWTException {
+		
+		// Create robot.
+		r = new Robot();
+		r.setAutoDelay(5);
+		
+		// Get window coordinates.
+		String windowName = "UnityPonyMMO";
+		int[] rect = new int[4];
+		try {
+			rect = GetWindowRect.getRect(windowName);
+			System.out.printf("The corner locations for the window \"%s\" are %s\n", windowName, Arrays.toString(rect));
+		} catch (GetWindowRect.WindowNotFoundException e) {
+			e.printStackTrace();
+		} catch (GetWindowRect.GetWindowRectException e) {
+			e.printStackTrace();
+		}
+		
+		int x1 = rect[0];
+		int y1 = rect[1];
+		
+		int x2 = rect[2];
+		int y2 = rect[3];
+		
+		// Get window center.
+		centerX = ((x2+x1)/2) + (centerX_OFFSET);
+		centerY = ((y2+y1)/2) + (centerY_OFFSET);
+
+		// Get position of boxes.
+		invX = centerX + (-435);
+		invY = centerY + (-240);
+		dropX = centerX + (-170);
+		dropY = centerY + (347);
+		
+		System.out.println("Center X: " + centerX + ", Center Y: " + centerY);
+		
+
+//		r.mouseMove(centerX, centerY);
+//		r.delay(1);
+//		r.mouseMove(dropX, dropY);
+//		r.delay(1);
+//		r.mouseMove(invX, invY);
+//		r.delay(1);
+//		
+		for (int i = 0; i < 20; i++) {
+			dropBits();
+		}
+	
+		System.exit(0);
+		
+		//dropBits(r);
+		//mouseAction(r, centerX-PIXEL, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		//mouseAction(r, centerX, centerY+PIXEL, DELAY, MouseEvent.BUTTON3_MASK);
+		//mouseAction(r, centerX+PIXEL, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		//mouseAction(r, centerX, centerY-PIXEL, DELAY, MouseEvent.BUTTON3_MASK);
+		
+		//dropBits(r);
+		
+		// Spell "Hi XD".
+//		spellHi();
+//		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+//		mouseAction(centerX+P+P+P, centerY, DELAY*2, MouseEvent.BUTTON3_MASK);
+//		spellXD();
+//		spellColon3();
+		
+		//0,0,0,0,0
+		int[][] tArr = new int[16][];
+		
+		// Arclight
+//		int[] a0 = {0,8,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,8,0,0,0,8,0};
+//		int[] a1 = {8,0,8,0,0,0,0,0,0,0,8,0,8,0,0,8,0,0,8,0,0,8,8,8};
+//		int[] a2 = {8,8,8,0,8,8,0,0,8,0,8,0,0,0,8,8,8,0,8,8,0,0,8,0};
+//		int[] a3 = {8,0,8,0,8,0,0,8,0,0,8,0,8,0,0,0,8,0,8,0,8,0,8,0};
+//		int[] a4 = {8,0,8,0,8,0,0,0,8,0,8,0,8,0,8,8,0,0,8,0,8,0,8,0};
+		
+		// Atiarose
+//		int[] a0 = {0,5,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a1 = {5,0,5,0,5,5,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,0,0,5,0};
+//		int[] a2 = {5,5,5,0,0,5,0,0,0,0,0,5,5,0,5,5,0,0,5,0,0,5,0,0,0,5,0,5};
+//		int[] a3 = {5,0,5,0,0,5,0,0,5,0,5,0,5,0,5,0,0,5,5,5,0,0,5,5,0,5,5,0};
+//		int[] a4 = {5,0,5,0,0,5,0,0,5,0,0,5,5,0,5,0,0,0,5,0,0,5,5,5,0,0,5,5};
+		
+//		int[] a5 = {1,0,0,0,1,0,1,1,1,0,0,1,0,1,0,1,0,0,1,0,0,0};
+//		int[] a6 = {1,0,0,0,1,0,1,0,0,0,0,1,0,1,0,1,0,0,1,0,0,0};
+//		int[] a7 = {1,0,0,0,1,0,0,1,1,1,0,1,0,1,0,0,1,1,0,0,0,0};
+		
+		// Boo Preset
+//		int[] a0 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a1 = {0,0,0,0,0,9,9,9,9,9,0,0,0,0,0,0};
+//		int[] a2 = {0,0,0,9,9,0,0,0,0,0,9,9,0,0,0,0};
+//		int[] a3 = {0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0};
+//		int[] a4 = {0,9,0,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a5 = {0,9,0,9,0,9,0,0,0,0,0,0,0,9,0,0};
+//		int[] a6 = {9,0,0,9,0,9,0,0,0,0,9,9,0,0,9,0};
+//		int[] a7 = {9,0,0,0,0,0,0,0,0,9,0,0,9,0,9,0};
+//		int[] a8 = {9,0,9,0,9,0,9,0,0,0,0,0,9,0,9,0};
+//		int[] a9 = {9,0,9,9,9,9,9,0,0,0,0,9,0,0,0,9};
+//		int[] a10 = {9,0,9,9,9,9,9,0,0,0,0,0,0,0,0,9};
+//		int[] a11 = {0,9,0,9,9,9,9,9,0,0,0,0,0,0,0,9};
+//		int[] a12 = {0,9,0,9,0,9,0,9,0,0,0,0,0,0,9,0};
+//		int[] a13 = {0,0,9,0,0,0,0,0,0,0,0,0,9,9,0,0};
+//		int[] a14 = {0,0,0,9,9,9,0,0,0,0,9,9,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,9,9,9,9,0,0,0,0,0,0};
+		
+		// Fireflower Preset
+//		int[] a0 = {0,0,9,0,0,0,9,0,0,9,0,0,0,9,0,0};
+//		int[] a1 = {0,9,0,9,0,9,0,0,0,0,9,0,9,0,9,0};
+//		int[] a2 = {0,9,0,0,9,0,0,0,0,0,0,9,0,0,9,0};
+//		int[] a3 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a4 = {9,0,0,0,9,9,0,0,0,9,9,0,0,0,0,9};
+//		int[] a5 = {9,0,0,9,0,0,9,0,9,0,0,9,0,0,0,9};
+//		int[] a6 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a7 = {0,9,0,0,0,0,0,0,0,0,0,0,0,0,9,0};
+//		int[] a8 = {0,0,9,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a9 = {0,0,0,9,9,0,0,0,0,0,0,9,9,0,0,0};
+//		int[] a10 = {0,0,0,0,0,9,9,9,9,9,9,0,0,0,0,0};
+//		int[] a11 = {0,0,9,9,9,0,9,0,0,9,9,9,9,0,0,0};
+//		int[] a12 = {0,9,0,0,0,9,9,0,0,9,0,0,0,9,0,0};
+//		int[] a13 = {9,0,0,0,0,0,9,0,9,0,0,0,0,0,9,0};
+//		int[] a14 = {9,0,0,0,0,0,9,9,9,0,0,0,0,0,9,0};
+//		int[] a15 = {0,9,9,9,9,9,0,0,0,9,9,9,9,9,0,0};
+		
+		//Rainbow Dash
+//		int[] a0 = 	{0,0,0,7,7,0,0,0,0,0,0,0,0,0,7,7,0};
+//		int[] a1 = 	{0,0,7,0,0,7,0,7,7,7,7,7,7,7,0,0,7};
+//		int[] a2 = 	{0,0,7,0,0,7,7,0,0,0,0,0,9,7,0,0,7};
+//		int[] a3 = 	{0,0,7,0,7,0,0,0,0,0,0,9,0,0,7,0,7};
+//		int[] a4 = 	{0,0,7,7,7,0,0,0,9,9,9,9,0,7,7,7,7};
+//		int[] a5 = 	{0,0,0,7,0,0,0,9,0,0,0,0,7,0,0,7,0};
+//		int[] a6 = 	{0,0,0,7,0,9,9,0,7,0,7,7,0,0,0,7,0};
+//		int[] a7 = 	{0,0,7,0,9,0,0,7,0,7,0,0,0,0,0,7,0};
+//		int[] a8 = 	{0,0,7,9,0,7,7,0,0,0,0,0,7,7,0,7,0};
+//		int[] a9 = 	{0,7,9,0,7,0,7,7,0,0,0,7,7,0,7,7,0};
+//		int[] a10 = {0,7,0,7,0,7,0,7,0,0,0,7,0,7,0,7,0};
+//		int[] a11 = {7,0,0,7,0,0,7,7,0,0,0,7,7,0,0,7,0};
+//		int[] a12 = {0,7,7,0,7,0,0,0,0,0,0,0,0,0,7,0,0};
+//		int[] a13 = {0,0,0,0,0,7,0,0,0,0,0,0,0,7,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,7,7,0,0,0,7,7,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,0,0,7,7,7,0,0,0,0,0,0};
+		
+		// Calibration Test Preset
+//		int[] a0 = {9,0,0,0,9,0,0,9,0,9,9,9,0,0,9,0};
+//		int[] a1 = {9,0,0,0,9,0,0,9,0,9,0,9,0,9,0,9};
+//		int[] a2 = {9,0,0,0,9,0,0,9,0,9,0,9,0,9,9,9};
+//		int[] a3 = {9,9,9,0,0,9,9,0,0,9,0,9,0,9,0,9};
+//		int[] a4 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a5 = {0,0,9,9,9,0,0,9,9,9,0,9,9,9,0,0};
+//		int[] a6 = {0,0,9,0,0,9,0,9,0,0,0,9,0,0,9,0};
+//		int[] a7 = {0,0,9,0,0,9,0,9,9,9,0,9,0,0,9,0};
+//		int[] a8 = {0,0,9,0,0,9,0,9,0,0,0,9,0,0,9,0};
+//		int[] a9 = {0,0,9,9,9,0,0,9,9,9,0,9,9,9,0,0};
+//		int[] a10 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a11 = {0,0,0,0,0,0,0,9,0,9,0,0,0,0,0,0};
+//		int[] a12 = {0,0,0,0,0,0,0,9,0,9,0,0,0,0,0,0};
+//		int[] a13 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,9,9,9,9,9,0,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,9,0,0,0,0,0,9,0,0,0,0};
+		
+		// Luna ded Preset
+		int[] a0 = {9,9,9,0,0,0,9,0,0,0,0,0,0,0,9,0};
+		int[] a1 = {9,9,0,0,0,0,9,0,9,0,9,0,0,9,0,9};
+		int[] a2 = {9,0,0,0,9,0,9,0,0,0,0,9,0,0,9,9};
+		int[] a3 = {9,0,0,9,0,0,9,0,9,0,9,0,0,9,9,0};
+		int[] a4 = {9,0,0,0,0,0,0,0,0,9,0,0,9,9,0,0};
+		int[] a5 = {0,0,9,0,9,0,9,0,9,0,9,9,9,0,0,0};
+		int[] a6 = {0,9,9,0,0,0,0,0,0,9,0,0,0,0,9,9};
+		int[] a7 = {0,0,0,0,9,0,9,0,9,0,9,0,0,9,0,0};
+		int[] a8 = {9,9,9,9,9,0,9,0,0,0,0,9,0,0,9,9};
+		int[] a9 = {0,0,0,0,0,0,9,0,9,0,0,0,9,0,0,9};
+		int[] a10 = {0,9,9,0,9,0,0,0,0,0,0,0,9,0,9,9};
+		int[] a11 = {9,9,0,9,0,0,9,0,0,0,0,0,0,9,0,9};
+		int[] a12 = {0,0,0,9,0,9,0,9,0,0,0,0,0,9,0,9};
+		int[] a13 = {9,9,0,0,9,9,0,9,9,0,0,0,9,9,0,0};
+		int[] a14 = {0,9,0,9,9,0,0,0,9,9,0,9,0,0,0,9};
+		int[] a15 = {0,9,0,9,0,0,9,0,0,9,9,0,0,0,9,9};
+		
+		// Box Preset
+//		int[] a0 = {9,9,9,9,9,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a1 = {9,9,9,9,9,9,0,0,0,0,0,0,0,0,0,0};
+//		int[] a2 = {9,9,9,9,9,9,9,0,0,0,0,0,0,0,0,0};
+//		int[] a3 = {9,9,9,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a4 = {9,9,9,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a5 = {0,9,9,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a6 = {0,0,9,9,9,9,9,0,0,0,0,0,0,0,0,0};
+//		int[] a7 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a8 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a9 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a10 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a11 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a12 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a13 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		
+		// Circle Preset
+//		int[] a0 = {0,0,9,9,9,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a1 = {0,9,0,0,0,9,0,0,0,0,0,0,0,0,0,0};
+//		int[] a2 = {9,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a3 = {9,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a4 = {9,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0};
+//		int[] a5 = {0,9,0,0,0,9,0,0,0,0,0,0,0,0,0,0};
+//		int[] a6 = {0,0,9,9,9,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a7 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a8 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a9 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a10 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a11 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a12 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a13 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		
+		// Triangle Preset
+//		int[] a0 = {0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a1 = {0,0,9,9,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a2 = {0,9,0,9,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a3 = {9,9,9,9,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a4 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a5 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a6 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a7 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a8 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a9 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a10 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a11 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a12 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a13 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		
+		// Pentagram Preset
+//		int[] a0 = 	{0,0,0,0,0,9,9,9,9,9,9,0,0,0,0,0};
+//		int[] a1 = 	{0,0,0,9,9,0,0,9,9,0,0,9,9,0,0,0};
+//		int[] a2 = 	{0,0,9,0,0,0,0,9,9,0,0,0,0,9,0,0};
+//		int[] a3 = 	{0,9,0,0,0,0,9,0,0,9,0,0,0,0,9,0};
+//		int[] a4 = 	{0,9,0,0,0,0,9,0,0,9,0,0,0,0,9,0};
+//		int[] a5 = 	{9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9};
+//		int[] a6 = 	{9,0,9,0,0,9,0,0,0,0,9,0,0,9,0,9};
+//		int[] a7 = 	{9,0,0,9,9,9,0,0,0,0,9,9,9,0,0,9};
+//		int[] a8 =	{9,0,0,0,9,9,9,0,0,9,9,9,0,0,0,9};
+//		int[] a9 = 	{9,0,0,0,9,0,0,9,9,0,0,9,0,0,0,9};
+//		int[] a10 = {9,0,0,9,0,0,0,9,9,0,0,0,9,0,0,9};
+//		int[] a11 = {0,9,0,9,0,9,9,0,0,9,9,0,9,0,9,0};
+//		int[] a12 = {0,9,9,9,9,0,0,0,0,0,0,9,9,9,9,0};
+//		int[] a13 = {0,0,9,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a14 = {0,0,0,9,9,0,0,0,0,0,0,9,9,0,0,0};
+//		int[] a15 = {0,0,0,0,0,9,9,9,9,9,9,0,0,0,0,0};
+		
+		// 20x20 Circle
+//		int[] a0 = {0,0,0,0,0,0,0,9,9,9,9,9,9,0,0,0,0,0,0,0};
+//		int[] a1 = {0,0,0,0,0,9,9,0,0,0,0,0,0,9,9,0,0,0,0,0};
+//		int[] a2 = {0,0,0,9,9,0,0,0,0,0,0,0,0,0,0,9,9,0,0,0};
+//		int[] a3 = {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a4 = {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a5 = {0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0};
+//		int[] a6 = {0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0};
+//		int[] a7 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a8 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a9 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a10 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a11 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a12 = {9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9};
+//		int[] a13 = {0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0};
+//		int[] a14 = {0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0};
+//		int[] a15 = {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a16 = {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0};
+//		int[] a17 = {0,0,0,9,9,0,0,0,0,0,0,0,0,0,0,9,9,0,0,0};
+//		int[] a18 = {0,0,0,0,0,9,9,0,0,0,0,0,0,9,9,0,0,0,0,0};
+//		int[] a19 = {0,0,0,0,0,0,0,9,9,9,9,9,9,0,0,0,0,0,0,0};
+		
+		// X Preset
+//		int[] a0 = {9,9,9,0,0,0,0,0,9,9,9,0,0,0,0,0};
+//		int[] a1 = {9,0,0,0,0,9,0,0,9,0,0,0,0,0,0,0};
+//		int[] a2 = {9,9,9,0,9,9,9,0,9,9,9,0,0,0,0,0};
+//		int[] a3 = {0,0,9,0,0,9,0,0,0,0,9,0,0,0,0,0};
+//		int[] a4 = {9,9,9,0,0,0,0,0,9,9,9,0,0,0,0,0};
+//		int[] a5 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a6 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a7 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a8 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a9 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a10 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a11 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a12 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a13 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a14 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//		int[] a15 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		
+		tArr[0] = a0;
+		tArr[1] = a1;
+		tArr[2] = a2;
+		tArr[3] = a3;
+		tArr[4] = a4;
+		tArr[5] = a5;
+		tArr[6] = a6;
+		tArr[7] = a7;
+		tArr[8] = a8;
+		tArr[9] = a9;
+		tArr[10] = a10;
+		tArr[11] = a11;
+		tArr[12] = a12;
+		tArr[13] = a13;
+		tArr[14] = a14;
+		tArr[15] = a15;
+//		tArr[16] = a16;
+//		tArr[17] = a17;
+//		tArr[18] = a18;
+//		tArr[19] = a19;
+		
+		drawArray(tArr, tArr.length, tArr[0].length);
+//		drawArray(tArr, 7, 7);
+	}
+
+	public static void mouseAction(int x, int y, int delay, int event) {
+		r.mouseMove(x, y);
+		r.delay(1);
+		r.mousePress(event);
+		r.delay(delay);
+		r.mouseRelease(event);
+		r.delay(1);
+	}
+	
+	public static void dropBits() {
+		
+		// Drag bits out of inventory.
+		r.mouseMove(invX, invY);
+		r.delay(5);
+		r.mousePress(MouseEvent.BUTTON1_MASK);
+		r.delay(50);
+		r.mouseMove(dropX, dropY);
+		r.delay(50);
+		r.mouseRelease(MouseEvent.BUTTON1_MASK);
+		r.delay(50);
+		
+		// Confirm drop.
+		//r.mouseMove(dropX, dropY);
+		//r.delay(10);
+		r.mousePress(MouseEvent.BUTTON1_MASK);
+		r.delay(50);
+		r.mouseRelease(MouseEvent.BUTTON1_MASK);
+		r.delay(50);
+	}
+	
+	public static void moveLeft() {
+		mouseAction(centerX-P+1, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+	}
+	public static void moveRight() {
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+	}
+	public static void moveUp() {
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+	}
+	public static void moveDown() {
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+	}
+	
+	/**
+	 * Move to the given target point from the current point.
+	 * @param row
+	 * @param col
+	 * @param targetRow
+	 * @param targetCol
+	 */
+	public static void moveToPoint(int row, int col, int targetRow, int targetCol) {
+		ArrayList<Coordinates> queue = new ArrayList<>();
+		ArrayList<Integer> queueDelay = new ArrayList<>();
+		
+		int tRow = row;
+		int tCol = col;
+		int tRow2 = tRow;
+		int tCol2 = tCol;
+		
+		int counter = 0;
+		System.out.print(row + " " + col + " | " + targetRow + " " + targetCol);
+		// Queue up moves.
+		while (tRow != targetRow || tCol != targetCol) {
+			System.out.print(".");
+			if (tRow < targetRow) tRow++;
+			else if (tRow > targetRow) tRow--;
+			
+			if (tCol < targetCol) tCol++;
+			else if (tCol > targetCol) tCol--;
+			
+			counter++;
+			if (counter >= 3) {
+				queue.add(new Coordinates(tRow - tRow2, tCol - tCol2));
+				System.out.print(" [" + (tRow - tRow2) + " | " + (tCol - tCol2) + "]");
+				queueDelay.add((DELAY*counter));
+				counter = 0;
+				
+				tRow2 = tRow;
+				tCol2 = tCol;
+			}
+		}
+		if (tRow - tRow2 != 0 || tCol - tCol2 != 0) {
+			queue.add(new Coordinates(tRow - tRow2, tCol - tCol2));
+			System.out.print(" [L: " + (tRow - tRow2) + " | " + (tCol - tCol2) + "]");
+			queueDelay.add((DELAY*counter)+0);
+			counter = 0;
+		}
+		
+		System.out.println();
+		
+		// Start moving.
+		for (int i = 0; i < queue.size(); i++) {
+			int qRow = queue.get(i).row;
+			int qCol = queue.get(i).col;
+			mouseAction(centerX+(P * qCol), 
+					centerY+(P * qRow), 
+					(queueDelay.get(i)), 
+					MouseEvent.BUTTON3_MASK);
+		}
+
+	}
+	
+	/**
+	 * Draw the array given.
+	 * @param tArr
+	 * @param mRow
+	 * @param mCol
+	 */
+	public static void drawArray(int[][] tArr, int mRow, int mCol) {
+		int row = 0;
+		int col = 0;
+		int tRow = 0;
+		int tCol = 0;
+		int C = 0;
+		
+		while (C <= tArr.length * 2) {
+			for (tRow = -C; tRow <= C; tRow++) {
+				for (tCol = -C; tCol <= C; tCol++) {
+					if (row + tRow >= 0 && row + tRow < tArr.length
+							&& col + tCol >= 0 && col + tCol < tArr[row + tRow].length
+							&& tArr[row + tRow][col + tCol] >= 1) {
+						
+						moveToPoint(row, col, row + tRow, col + tCol);
+						
+						row += tRow;
+						col += tCol;
+						tArr[row][col] = 0;
+						C = 0;
+						dropBits();
+					}
+				}
+			}
+			
+			C++;
+		}
+		
+		/*for (tRow = 0; tRow < tArr.length; tRow++) {
+			for (tCol = 0; tCol < tArr[tRow].length; tCol++) {
+				if (tArr[tRow][tCol] >= 1) {
+					
+					moveToPoint(row, col, tRow, tCol);
+					
+					row = tRow;
+					col = tCol;
+					tArr[row][col] = 0;
+					
+					dropBits();
+				}
+			}
+		}*/
+		
+		/*while (row < tArr.length && row < mRow) {
+			for (col = 0; col < tArr[row].length && col < mCol; col++) {
+				if (tArr[row][col] >= 1) {
+					dropBits();
+				}
+				if (col < tArr[row].length-1 && col < mCol-1)
+					moveRight();
+			}
+			moveDown();
+			row++;
+			
+			if (row >= tArr.length) {
+				break;
+			}
+			
+			for (col = mCol-1; col >= 0; col--) {
+				if (tArr[row][col] >= 1) {
+					dropBits();
+				}
+				if (col > 0)
+					moveLeft();
+			}
+			moveDown();
+			row++;
+		}*/
+	}
+	
+	public static void drawImage() {
+		//TODO: Finish.
+	}
+	
+	public static void spellHi() {
+		// Spell "Hi".
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P-P, DELAY, MouseEvent.BUTTON3_MASK);
+		////
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P+P+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+		
+		mouseAction(centerX+P+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+	}
+	
+	public static void spellXD() {
+		dropBits();
+		mouseAction(centerX+P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P-P, centerY-P-P, DELAY*2, MouseEvent.BUTTON3_MASK);
+		
+		mouseAction(centerX-P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P+P+P, centerY-P-P-P, DELAY*2, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY+P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+		mouseAction(centerX+P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+		mouseAction(centerX-P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P, centerY, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+	}
+	
+	public static void spellColon3() {
+		dropBits();
+		mouseAction(centerX, centerY+P+P, DELAY*2, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+		mouseAction(centerX+P+P+P, centerY+P, DELAY*2, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX+P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		mouseAction(centerX-P, centerY-P, DELAY, MouseEvent.BUTTON3_MASK);
+		dropBits();
+		
+	}
+}

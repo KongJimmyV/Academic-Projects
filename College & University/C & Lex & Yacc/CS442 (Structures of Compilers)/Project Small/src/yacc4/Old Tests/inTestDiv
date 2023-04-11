@@ -1,0 +1,14 @@
+int num1;
+int num2;
+int num3;
+int num4;
+
+num1 = 20 / 30;
+num2 = 30 / 20;
+num3 = 300 / 20;
+num4 = 30 / 200;
+
+print num1;
+print num2;
+print num3;
+print num4;

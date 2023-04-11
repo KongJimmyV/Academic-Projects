@@ -1,0 +1,24 @@
+CREATE TABLE Employee(
+  SSN NVARCHAR(11) PRIMARY KEY NOT NULL, -- NVARCHAR(9) VARCHAR(9) INT
+  Salary NUMERIC(8, 2) NOT NULL,
+  FirstName NVARCHAR(10) NOT NULL,
+  MiddleName NVARCHAR(10),
+  LastName NVARCHAR(10) NOT NULL
+);
+
+CREATE TABLE Project(
+  ID INTEGER PRIMARY KEY AUTOINCREMENT, -- PID for WORKS_ON table
+  Description NVARCHAR(255) NOT NULL -- BLOB
+);
+
+CREATE TABLE Works_On(
+  ID INTEGER NOT NULL,
+  SSN NVARCHAR(11) NOT NULL,
+  Hours INT NOT NULL,
+--  CONSTRAINT fk_project_works_on FOREIGN KEY (ID) REFERENCES Project(PID)
+  CONSTRAINT fk_project_works_on FOREIGN KEY (ID) REFERENCES Project(ID),
+  CONSTRAINT fk_employee_works_on FOREIGN KEY (SSN) REFERENCES Employee(SSN)
+);
+
+INSERT INTO Employee(SSN, Salary, FirstName, LastName) VALUES ('123-45-6789', 123445.00, 'John', 'Smith');
+INSERT INTO Employee(SSN, Salary, FirstName, MiddleName, LastName) VALUES ('987-65-4321', 13299.00, 'James', 'Lee', 'Smith');

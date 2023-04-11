@@ -1,0 +1,47 @@
+.equ RED_LEDS,		0x10000010	# RED LEDS
+.equ PUSH_BUTTONS,	0x10000020	# PUSH BUTTONS
+
+.data			# This region holds data
+	.align 2
+
+	num:	.word 1,2,3,4,5
+
+
+
+.text			# This region holds instructions
+.global main
+
+main:
+
+	movia 	r2,RED_LEDS			# Get address from RED_LEDS
+	movia 	r3,PUSH_BUTTONS		# Get address from PUSH_BUTTONS
+	mov		r4,r0				# Initialize r4 as COUNTER
+	movia	r5,num				# Initialize r5 with address of num
+
+	movi	r21,5				# loop1 Counter MAX
+
+loop1:
+	waitbutton1:
+		ldw		r11,0(r3)
+		andi	r11,r11,0b0010
+		beq		r11,r0,waitbutton1
+
+	waitbutton2:
+		ldw		r11,0(r3)
+		andi	r11,r11,0b0010
+		bne		r11,r0,waitbutton2
+
+		bge		r4,r6,clearLED
+
+
+		beq		r4,r6,loop1end
+
+loop1end:
+
+clearLED:
+	stw		r0,0(r2)
+	br		loop1
+
+br 		loop1
+
+.end

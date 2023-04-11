@@ -1,0 +1,21 @@
+
+int aa;
+int bb;
+
+aa = 1;
+bb = 2;
+
+print(100);
+
+if (aa == bb - 1) {
+    print(aa);
+}
+
+if (aa == bb) {
+    print(aa);
+} else {
+    print(bb);
+}
+
+print(101);
+

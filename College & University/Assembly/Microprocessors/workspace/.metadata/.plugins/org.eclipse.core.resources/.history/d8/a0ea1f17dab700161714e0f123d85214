@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <altera_avalon_pio_regs.h>
+#include <system.h>
+
+void delay_ms(int time);
+void init_pwm0();
+void set_pwm0_freq(int hz);
+void set_pwm0_off();
+
+int main()
+{
+	init_pwm0(); // init PWM
+	for(;;)
+	{
+		set_pwm0_freq(6000); // set PWM0 output to 6khz
+		delay_ms(100); // wait 100 milliseconds
+		set_pwm0_freq(2000); // set PWM0 output to 2khz
+		delay_ms(200); // wait 200 milliseconds
+		set_pwm0_off(); // set PWM0 off
+		delay_ms(50); // wait 50 milliseconds
+	}
+
+}
+
+void init_pwm0()
+{
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE + 4,0); // 0 duty_cycle = off
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE + 8,1); // enable
+}
+
+void set_pwm0_freq(int hz)
+{
+	int clk_div = 50000000 / hz;
+	int duty_cycle = clk_div / 2;
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE + 4,0); // 0 duty_cycle = off
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE, clk_div); // set clk_div
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE + 4, duty_cycle); // 50% duty cycle
+}
+
+void set_pwm0_off()
+{
+	IOWR_ALTERA_AVALON_PIO_DATA(PWM0_BASE + 4,0); // 0 duty_cycle = off
+}
+
+
+void delay_ms(int time)
+{
+	int i;
+	int delay = time * 447;
+	int dummy;
+	for(i = 0; i < delay; i++)
+		dummy++;
+}

@@ -1,0 +1,104 @@
+
+**** Build of configuration Nios II for project lab12 ****
+
+make all 
+Info: Building ../lab12_bsp/
+make --no-print-directory -C ../lab12_bsp/
+[BSP build complete]
+Info: Compiling lab12.c to obj/default/lab12.o
+nios2-elf-gcc -xc -MP -MMD -c -I../lab12_bsp//HAL/inc -I../lab12_bsp/ -I../lab12_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mhw-div -mhw-mul -mno-hw-mulx  -o obj/default/lab12.o lab12.c
+lab12.c:77: error: conflicting types for 'play_note'
+lab12.c:76: error: previous declaration of 'play_note' was here
+lab12.c: In function 'main':
+lab12.c:135: error: conflicting types for 'marioBrosNoteFreq'
+lab12.c:118: error: previous definition of 'marioBrosNoteFreq' was here
+lab12.c:136: error: excess elements in char array initializer
+lab12.c:136: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:136: error: excess elements in char array initializer
+lab12.c:136: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:136: error: excess elements in char array initializer
+lab12.c:136: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:137: error: excess elements in char array initializer
+lab12.c:137: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:137: error: excess elements in char array initializer
+lab12.c:137: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:137: error: excess elements in struct initializer
+lab12.c:137: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:137: error: excess elements in char array initializer
+lab12.c:137: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:138: error: excess elements in char array initializer
+lab12.c:138: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:138: error: excess elements in char array initializer
+lab12.c:138: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:138: error: excess elements in char array initializer
+lab12.c:138: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:139: error: excess elements in struct initializer
+lab12.c:139: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:139: error: excess elements in char array initializer
+lab12.c:139: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:139: error: excess elements in char array initializer
+lab12.c:139: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:141: error: excess elements in char array initializer
+lab12.c:141: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:141: error: excess elements in char array initializer
+lab12.c:141: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:141: error: excess elements in char array initializer
+lab12.c:141: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:141: error: excess elements in struct initializer
+lab12.c:141: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:142: error: excess elements in char array initializer
+lab12.c:142: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:142: error: excess elements in struct initializer
+lab12.c:142: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:142: error: excess elements in char array initializer
+lab12.c:142: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:143: error: excess elements in char array initializer
+lab12.c:143: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:143: error: excess elements in struct initializer
+lab12.c:143: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:143: error: excess elements in char array initializer
+lab12.c:143: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:143: error: excess elements in struct initializer
+lab12.c:143: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:144: error: excess elements in char array initializer
+lab12.c:144: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:144: error: excess elements in struct initializer
+lab12.c:144: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:144: error: excess elements in struct initializer
+lab12.c:144: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:144: error: excess elements in char array initializer
+lab12.c:144: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:146: error: excess elements in struct initializer
+lab12.c:146: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:146: error: excess elements in struct initializer
+lab12.c:146: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:146: error: excess elements in char array initializer
+lab12.c:146: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:147: error: excess elements in char array initializer
+lab12.c:147: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:147: error: excess elements in struct initializer
+lab12.c:147: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:147: error: excess elements in char array initializer
+lab12.c:147: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:147: error: excess elements in char array initializer
+lab12.c:147: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:148: error: excess elements in char array initializer
+lab12.c:148: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:148: error: excess elements in struct initializer
+lab12.c:148: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:148: error: excess elements in char array initializer
+lab12.c:148: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:148: error: excess elements in struct initializer
+lab12.c:148: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:149: error: excess elements in char array initializer
+lab12.c:149: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:149: error: excess elements in struct initializer
+lab12.c:149: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:149: error: excess elements in struct initializer
+lab12.c:149: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c:149: error: excess elements in char array initializer
+lab12.c:149: error: (near initialization for 'marioBrosNoteFreq')
+lab12.c: At top level:
+lab12.c:221: error: conflicting types for 'play_note'
+lab12.c:197: error: previous definition of 'play_note' was here
+make: *** [obj/default/lab12.o] Error 1

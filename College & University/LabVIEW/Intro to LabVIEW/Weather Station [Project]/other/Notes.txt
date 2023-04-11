@@ -1,0 +1,6 @@
+Temperature Sensor Model: LM34
+
+https://www.weather.gov/media/epz/wxcalc/windChill.pdf
+
+Measure Wind Speed with Your Own Wind Meter
+https://www.scientificamerican.com/article/bring-science-home-wind-speed/

@@ -1,0 +1,10 @@
+1. float y;
+2. floam x;
+       ^
+Unexpected character
+3. y = 10;
+4. x = 2*y@3;
+   ^
+Variable not declared
+          ^
+Unexpected character

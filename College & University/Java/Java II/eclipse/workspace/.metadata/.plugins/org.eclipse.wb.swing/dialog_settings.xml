@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.utils.ui.dialogs.StringsDialog">
+		<item value="540" key="x"/>
+		<item value="359" key="width"/>
+		<item value="273" key="y"/>
+		<item value="313" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.font.FontDialog">
+		<item value="569" key="x"/>
+		<item value="504" key="width"/>
+		<item value="272" key="y"/>
+		<item value="506" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.border.BorderDialog">
+		<item value="591" key="x"/>
+		<item value="482" key="width"/>
+		<item value="334" key="y"/>
+		<item value="381" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.laf.ui.AddCustomLookAndFeelDialog">
+		<item value="416" key="x"/>
+		<item value="607" key="width"/>
+		<item value="225" key="y"/>
+		<item value="409" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.tree.TreeModelDialog">
+		<item value="434" key="x"/>
+		<item value="571" key="width"/>
+		<item value="183" key="y"/>
+		<item value="493" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.accelerator.KeyStrokePropertyEditor$KeyStrokeDialog">
+		<item value="529" key="x"/>
+		<item value="382" key="width"/>
+		<item value="190" key="y"/>
+		<item value="480" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.icon.ImagePropertyEditor$ImageDialog">
+		<item value="192" key="x"/>
+		<item value="881" key="width"/>
+		<item value="245" key="y"/>
+		<item value="559" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.icon.IconPropertyEditor$ImageDialog">
+		<item value="519" key="x"/>
+		<item value="881" key="width"/>
+		<item value="235" key="y"/>
+		<item value="580" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.spinner.SpinnerModelDialog">
+		<item value="457" key="x"/>
+		<item value="525" key="width"/>
+		<item value="199" key="y"/>
+		<item value="462" key="height"/>
+	</section>
+</section>

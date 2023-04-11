@@ -1,0 +1,49 @@
+ 	S T R I S      . . . . . . .  A Tetris-like game
+
+
+D i f f e r e n c e  with other tetris games:
+
+	- works with levels, with different widths
+	- get rid of all ' yellow balls ' is enough to go to the next level
+
+T h e   g a m e
+
+After you launch the program, you always start at level 0. Unless you close
+the application you can play the game again and again, moving up the levels
+when you pass at least 3 levels in one game. For instance, if you don't get
+to level 3 in your first game, you will have to restart at level 0. On the
+other hand if you end at level 14, you'll be able to restart at level 12.
+There are 100 levels at present.
+For every level you can find a trick to pass through it. Without this tricks
+you will have a hard time to pass levels.
+When there are no more levels, you will get random levels instead. Of course
+this means you will have to pass a hundred levels before you reach this point.
+
+U s e d   k e y b o a r d   k e y s 
+
+	- left/right cursor --> falling piece goes to left/right
+	- up         cursor --> falling piece turns
+	- down       cursor --> falling goes one position bellow previous
+	- space             --> fast dropdown of falling piece
+
+R u l e s   o f   t h e   g a m e 
+
+As soon as all 'yellow balls' are removed from the playing field, you can
+resume with the next level. When the 'Extend with balls' flag is set, new
+'yellow balls' will appear as a kind of falling pieces. They can be a great
+help in certain situation. They can be a terrible nuissance in other situations.
+
+S c o r e   c o u n t i n g
+
+Per piece	100
+Per line	1000
+Per level	100000 divided by the no. of lines you needed to pass through
+ 		       the level --> the less lines, the more points you get
+Per 5 levels	50000
+
+
+Good luck!
+
+The auteur, Stefaan Casier		Email : stefaan.casier@pi.be
+
+19 february 2000.

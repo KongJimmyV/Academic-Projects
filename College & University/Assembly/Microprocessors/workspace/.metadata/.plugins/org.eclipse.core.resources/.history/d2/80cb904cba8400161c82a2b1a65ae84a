@@ -1,0 +1,57 @@
+		.equ LEDS_RED,0x10000010 # The base address of the RED LEDs
+		.equ BUTTONS, 0x10000020 # The base address of the pushbuttons
+		.equ SWITCHES, 0x10000030 # The base address of the slider switches
+
+
+		.text
+		.global main
+
+main:
+		movia	r20, BUTTONS
+		movia	r21, SWITCHES
+		movia	r22, LEDS_RED
+
+		mov		r8,r0			# r8 will hold the count, start it at zero
+		stw		r0,0(r22)		# Initialize red LEDs to 0 (blank)
+
+loop:
+
+								# Loop forever until a button is pressed (don't care which)
+wait1:	ldw		r10,0(r20)		# read the buttons
+		beq		r10,r0,wait1	# If no buttons are pressed (r10 = 0) go back to wait1
+
+
+		addi	r8,r8,1			# Increment the count by 1
+
+
+		ldw		r10,0(r21)		# Load sliders into r10
+		andi	r11,r10,0b0001	# Mask out the first bit (first slider switch)
+
+								# ***** STEP 2:
+								# At this point, r11 contains either a 0 or a 1
+								# add code so that if switch 1 is on (r11 is 1)
+								# then the count (r8) will be reset to 0.
+								# Remember you will most likely test for the OPPOSITE,
+								# and jump to some label PAST the instruction that
+								# resets r8.
+								# Add code below here:
+
+		bne		r0,r11,main
+
+
+		stw		r8,0(r22)		# set RED LEDs equal to the current count
+
+
+								# ***** STEP 1:
+								# Add a loop similar to the wait1 loop above, but this
+								# one will wait for the button to be RELEASED, (try bne)
+								# Remember to use a different label than wait1, since
+								# labels can only appear once.
+								# Add code below here:
+
+wait2:	ldw		r10,0(r20)
+		bne 	r0,r20, wait2
+
+		br loop					# go back to start of loop
+
+		.end

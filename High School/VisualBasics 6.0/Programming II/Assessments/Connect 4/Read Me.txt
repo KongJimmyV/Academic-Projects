@@ -1,0 +1,23 @@
+Description of the levels of AI:
+-Beginner:(search depth = 2): An easy level made for players who don't know anything about the strategy of the game, the computer will not defend against even the simplist tactical tricks.
+-Intermediate:(search depth 4): The computer plays at the level of ordinary players, it can also be beaten by tactical tricks, this level is not strong but gives a good game for non experienced players.
+-Good:(search depth = 4 with the full evaluation function): The computer knows the difference between even and odd threats and tries to obtain linearity, but is still beatable by tactical tricks, it plays at the level of players who know the strategy of connect 4 but are not experts of the game.
+-Expert:(search depth =8 with the full evaluation function): The computer plays at a high level without taking a long time to think(in the .exe version), good players should find this level challenging, it is very hard to beat by tactical ways and should be beaten with the positional strategy of connect 4. and it is preferred to run this level in the .exe version.
+-Master:(iterative search depth limited to 10 seconds with the full evaluation function + perfect play when there are 24 empty places or less): The computer plays at a very high level that is challenging even for expert and highly skilled players, it is almost impossible to beat by tactical ways. However, it can be beaten by very strong computer programs or by players who play almost perfectly, run this level only in the .exe version.
+-Search win/loss: This mode is made to search for the theoritical value of the game, it tries to search to a depth until a player is able to force a win or the game is over by draw, if it is able to determine that is plays the move and displays the value in the value field. The search will stop after 3 minutes if not completed and can be stopped with the "stop thinking" button, but if the search is  not completed the computer may make weak moves, in the .exe version, the computer usually can solve the game when there are at most 24-28 empty places on the board or when the game can be won quickly by tactical ways.
+-Custom AI levels: You can spicify the depth limit and the time limit for the search, and you can determine how much of the evaluation function to use:
+	0: the computer doesn't use the evaluation function, only evaluates for win and loss.
+	1: the evaluation function is limited to the knowledge that central positions are better than peripheral ones.
+	2: Like level (1) plus trying to obtain linearity.
+	3: Like (2) plus knowledge of even and odd threats.
+
+
+***************Strategy hints******************
+-Central positions of the board are better than peripheral ones.
+-Try to get 3 in a row and 2 in a row and prevent your opponent from doing that.
+-Even and odd threats(description simplified):
+	A threat is a horizontal or diagonal 3 in a row with an adjacent empty cell that the cell below it is also empty, it is a threat because the opponent cant play in the place below the empty cell of the line because he will lose, but he may be forced to play there if all other columns are full.
+	Because the height of the board is 6 then when all columns are full expept one the first player will occupy the odd heights and the second player will occupy the even heights. So most of the time, yellow (the first player) will win with odd threats (threats that have there empty cell at an odd height) and the second player (red) will win with even threats. So yellow should try to make odd threats and prevent red from making even threats, and the red should try the opposite.
+
+For further reading about the strategy of connect 4 visit:
+http://www.farfarfar.com/games/connect_four/

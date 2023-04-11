@@ -1,0 +1,20 @@
+
+int i;
+int jj;
+int k;
+i = 7;
+jj = 20;
+k = i+jj;
+print(k); printlines(1);
+k = i-jj;
+print(k); printlines(1);
+k = i*jj;
+print(k); printlines(1);
+k = jj/i;
+print(k); printlines(1);
+k = jj%i;
+print(k); printlines(1);
+k = -i;
+print(k); printlines(1);
+k = i^2;
+print(k); printlines(1);

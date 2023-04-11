@@ -1,0 +1,57 @@
+			.text               # Instructions follow
+
+      		.global main        # makes label "main" globally known
+
+main:  							# Execution of the program starts here
+
+	RegistryDefinitions:
+			movia	r2,0x10000030		# 	set address from Slider Switches...		--> ...to R2
+			movia	r3,0x10000000		# 	set address from Green LEDS...			--> ...to R3
+			movia	r4,0x10000010		# 	set address from Red LEDS...			--> ...to R4
+
+			movia	r5,0x10000020		# 	set address from Push Buttons...		--> ...to R5
+
+	RegistryVariables:
+			movi	r9, 0				# 	set value 0	into R9
+			movi	r10,0				# 	set value 0 into R10
+			movi	r11, 0				# 	set value 0	into R11	(Note = Constant zero)
+
+
+turnOnAllLeds:					# TURN ON ALL LEDS
+			movi	r10,0b1111111111	# copy binary value into R10 (Red LEDS)
+			movi	r9,0b0011111111		# copy binary value into R9 (Green LEDS)
+			stw		r9,0(r4)			# store r9 value to r4 to turn on Green LEDS
+			stw		r10,0(r3)			# store r11 value to r3 to turn on Red LEDS
+
+
+turnOffAllLeds:					# TURN OFF ALL LEDS
+			movi	r10,0				# copy 0 into r11
+			movi	r9,0				# copy 0 into r9
+			stw		r9,0(r4)			# store r9 value to r4 reset green leds
+			stw		r10,0(r3)			# store r11 value to r3 to reset red leds
+
+
+loop:   						# THIS LOOP CHECKS LEDS, SWITCHES, AND BUTTONS AND DOES THE FOLLOWING.
+			nop							# The beginning of the main loop
+
+			ldw		r9,0(r2)			# read from address in R2 (switches) and store value in R9
+			addi	r9,r9,1				# Set R9 to be equal to the sum of R9 + 1
+			stw		r9,0(r4)			# store the value in R9 to the address in R4 (green lights)
+			addi	r10,r10,0			# Set R11 to be equal to the sum of R9 + 0
+			stw		r10,0(r3)			# store the value in R9 to the address in R3 (red lights)
+
+			movi 	r11,0					# reset R10 ---> 0
+			stw		r11,0(r5)
+			ldw		r4,0(r2)				# reads from R2 addresses (buttons)
+			bne		r11,r5,turnOnAllLeds	# if the Push Buttons are pressed, branch to turnOnAllLeds
+
+			br      loop        # Branch to loop
+
+
+
+       		.end                  		# The assembler will stop here
+
+
+
+
+

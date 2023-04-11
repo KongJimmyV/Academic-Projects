@@ -1,0 +1,40 @@
+		.equ SWITCHES, 0x10000030	# The base address of the slider switches
+
+		.equ PWM0_clock_divider, 0x10000300
+		.equ PWM0_duty_cycle, 0x10000304
+		.equ PWM0_enable, 0x10000308
+
+		.equ PWM0_clock_divider, 0x10000310
+		.equ PWM0_duty_cycle, 0x10000314
+		.equ PWM0_enable, 0x10000318
+						# Be sure to add an .equ statement for the PWM0 base addresses
+
+
+		.text 			# The text region indicates the start of instructions
+
+		.global main
+
+main:	nop
+						# BEGIN YOUR SETUP CODE HERE
+						# Setup the PWM module and enable it. Remember
+						# to either load your addresses as you go,
+						# or you can set aside registers for memory
+						# addresses all at once, and leave them.
+
+
+
+
+loop:	nop
+							# THE MAIN LOOP STARTS HERE
+							# Read switches, multiply the value by 4, then
+							# store in PWM0's duty_cycle register
+
+
+
+
+
+		br	loop			# END OF LOOP
+
+		.end
+
+
