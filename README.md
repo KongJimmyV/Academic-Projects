@@ -1,2 +1,2 @@
 # Academic-Projects
-My programming assignments that were done in an academic setting.
+My programming assignments that were completed in an academic setting.
